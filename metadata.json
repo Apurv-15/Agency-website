@@ -1,0 +1,9 @@
+{
+  "name": "Xforge Web Services",
+  "description": "High-performance digital experiences, custom Shopify funnels, CRM apps, and web engineering for market-leading brands.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
+
