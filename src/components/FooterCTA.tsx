@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Calendar, CheckCircle2, X, Dribbble, Sparkles } from "lucide-react";
+import { Calendar, CheckCircle2, X, Dribbble } from "lucide-react";
 import TextWordReveal from "./TextWordReveal";
 
 interface FooterCTAProps {
@@ -32,16 +32,16 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
   };
 
   return (
-    <footer id="contact" className="w-full bg-black text-white relative min-h-[680px] md:min-h-[780px] flex items-center justify-center overflow-hidden py-24 px-4 sm:px-6 md:px-10">
+    <footer id="contact" className="w-full bg-transparent text-text-primary relative min-h-[680px] md:min-h-[780px] flex items-center justify-center overflow-hidden py-24 px-4 sm:px-6 md:px-10 rounded-t-[3rem] md:rounded-t-[5rem] -mt-12 md:-mt-20 z-10 shadow-[0_-15px_30px_-15px_rgba(0,0,0,0.05)]">
       
-      {/* Liquid Silk Smoke Wave Background Effect */}
+      {/* Liquid Silk Smoke Wave Background Effect (Light version) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Soft radial glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-neutral-800/20 blur-[130px] rounded-full pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-neutral-100/50 blur-[130px] rounded-full pointer-events-none" />
 
-        {/* Dynamic Abstract Silk Wave Render (SVG Wave Masked with Smoke Gradient) */}
+        {/* Dynamic Abstract Silk Wave Render (SVG Wave Masked with Light Smoke Gradient) */}
         <svg
-          className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-screen"
+          className="absolute inset-0 w-full h-full object-cover opacity-70 mix-blend-multiply"
           viewBox="0 0 1440 900"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -49,18 +49,18 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
         >
           <defs>
             <linearGradient id="smokeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#000000" stopOpacity="0" />
-              <stop offset="30%" stopColor="#ffffff" stopOpacity="0.4" />
-              <stop offset="50%" stopColor="#a3a3a3" stopOpacity="0.7" />
-              <stop offset="70%" stopColor="#ffffff" stopOpacity="0.2" />
-              <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
+              <stop offset="30%" stopColor="#f5f5f5" stopOpacity="0.8" />
+              <stop offset="50%" stopColor="#e5e5e5" stopOpacity="0.9" />
+              <stop offset="70%" stopColor="#f5f5f5" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
             </linearGradient>
             <linearGradient id="smokeGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
-              <stop offset="0%" stopColor="#000000" stopOpacity="0" />
-              <stop offset="40%" stopColor="#ffffff" stopOpacity="0.35" />
-              <stop offset="60%" stopColor="#737373" stopOpacity="0.6" />
-              <stop offset="85%" stopColor="#ffffff" stopOpacity="0.1" />
-              <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+              <stop offset="0%" stopColor="#ffffff" stopOpacity="0" />
+              <stop offset="40%" stopColor="#f5f5f5" stopOpacity="0.75" />
+              <stop offset="60%" stopColor="#d4d4d4" stopOpacity="0.8" />
+              <stop offset="85%" stopColor="#ffffff" stopOpacity="0.4" />
+              <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
             </linearGradient>
             <filter id="blurFilter" x="-20%" y="-20%" width="140%" height="140%">
               <feGaussianBlur stdDeviation="35" />
@@ -88,7 +88,7 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
           {/* Crisp Silk Ridge Lines */}
           <path
             d="M-50,620 C250,450 480,180 820,340 C1160,500 1250,150 1500,480"
-            stroke="white"
+            stroke="rgba(0,0,0,0.12)"
             strokeWidth="3.5"
             fill="none"
             filter="url(#softBlur)"
@@ -96,14 +96,14 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
           />
           <path
             d="M0,660 C320,480 520,240 850,380 C1180,520 1300,220 1500,520"
-            stroke="rgba(255,255,255,0.4)"
+            stroke="rgba(0,0,0,0.06)"
             strokeWidth="1.5"
             fill="none"
           />
         </svg>
 
-        {/* Ambient Dark Vignette overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
+        {/* Ambient Light Vignette overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white pointer-events-none" />
       </div>
 
       {/* Centered Content */}
@@ -115,15 +115,15 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-neutral-900/90 border border-neutral-800 text-xs font-semibold text-neutral-300 mb-8 backdrop-blur-md shadow-2xs glow-button"
+          className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white border border-border-muted text-xs font-bold text-text-primary mb-8 shadow-2xs"
           style={{ willChange: "transform, opacity" }}
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-          <span>Available For Work</span>
+          <span className="w-1.5 h-1.5 rounded-full bg-accent-amber animate-pulse" />
+          <span className="font-inter uppercase tracking-wide text-[10px]">Available For Work</span>
         </motion.div>
 
         {/* Main Center Headline with Word Reveal */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-display font-medium text-white tracking-tight leading-[1.25] md:leading-[1.2] max-w-3xl mb-9 px-2">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-geist font-normal text-text-primary tracking-tight leading-[1.25] md:leading-[1.2] max-w-3xl mb-9 px-2">
           <TextWordReveal 
             text="Curious about what we can create together? Let’s bring something extraordinary to life!"
             delay={0.15}
@@ -143,9 +143,9 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
         >
           <button
             onClick={handleBookCall}
-            className="px-8 py-3.5 rounded-full bg-black hover:bg-neutral-900 text-white text-sm font-semibold border border-neutral-700/90 hover:border-white/60 transition-all shadow-[0_0_30px_rgba(255,255,255,0.08)] hover:shadow-[0_0_35px_rgba(255,255,255,0.16)] active:scale-98 flex items-center gap-2.5 cursor-pointer glow-button"
+            className="px-8 py-3.5 rounded-full bg-surface-dark hover:opacity-90 text-white text-xs sm:text-sm font-bold shadow-sm transition-all flex items-center gap-2.5 cursor-pointer font-inter uppercase tracking-wider"
           >
-            <Calendar className="w-4 h-4 text-emerald-400" />
+            <Calendar className="w-4 h-4 text-accent-amber" />
             <span>Book a Free Call</span>
           </button>
         </motion.div>
@@ -156,7 +156,7 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex items-center gap-5 text-neutral-400 text-sm font-medium"
+          className="flex items-center gap-5 text-text-secondary text-sm font-bold font-inter"
           style={{ willChange: "opacity" }}
         >
           {/* Behance */}
@@ -164,20 +164,20 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
             href="https://behance.net" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="hover:text-white transition-colors flex items-center font-bold text-base tracking-tight"
+            className="hover:text-text-primary transition-colors flex items-center tracking-tight"
             title="Behance"
           >
             Bē
           </a>
 
-          <span className="text-neutral-700 select-none">|</span>
+          <span className="text-border-muted select-none">|</span>
 
           {/* X (Twitter) */}
           <a 
             href="https://x.com" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="hover:text-white transition-colors flex items-center"
+            className="hover:text-text-primary transition-colors flex items-center"
             title="X (Twitter)"
           >
             <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
@@ -185,14 +185,14 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
             </svg>
           </a>
 
-          <span className="text-neutral-700 select-none">|</span>
+          <span className="text-border-muted select-none">|</span>
 
           {/* Dribbble */}
           <a 
             href="https://dribbble.com" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="hover:text-white transition-colors flex items-center"
+            className="hover:text-text-primary transition-colors flex items-center"
             title="Dribbble"
           >
             <Dribbble className="w-4 h-4" />
@@ -200,7 +200,7 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
         </motion.div>
 
         {/* Subtle Copyright & Studio Notice */}
-        <div className="mt-14 text-xs text-neutral-600 font-mono">
+        <div className="mt-14 text-[11px] text-text-secondary font-bold uppercase tracking-wider font-inter">
           © {new Date().getFullYear()} Greffon Studio. All rights reserved.
         </div>
 
@@ -215,25 +215,25 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setShowCallModal(false)}
-              className="absolute inset-0 bg-black/80 backdrop-blur-md"
+              className="absolute inset-0 bg-black/60 backdrop-blur-md"
             />
 
             <motion.div 
               initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              className="relative w-full max-w-lg rounded-[2rem] bg-neutral-950 border border-neutral-800 p-6 sm:p-8 shadow-2xl z-10"
+              className="relative w-full max-w-lg rounded-card-large bg-white border border-border-muted p-6 sm:p-8 shadow-2xl z-10 text-text-primary"
             >
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span className="text-xs font-mono uppercase tracking-wider text-neutral-400">
+                  <span className="w-2.5 h-2.5 rounded-full bg-accent-amber animate-pulse" />
+                  <span className="text-[10px] font-bold font-inter uppercase tracking-wider text-text-secondary animate-pulse">
                     Direct Consultation Request
                   </span>
                 </div>
                 <button 
                   onClick={() => setShowCallModal(false)}
-                  className="p-1.5 rounded-full hover:bg-neutral-900 text-neutral-400 hover:text-white transition-colors cursor-pointer"
+                  className="p-1.5 rounded-full hover:bg-surface-light text-text-secondary hover:text-text-primary transition-colors cursor-pointer"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -241,50 +241,50 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
 
               {callBooked ? (
                 <div className="py-8 flex flex-col items-center justify-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4">
+                  <div className="w-12 h-12 rounded-full bg-accent-amber/20 text-accent-amber flex items-center justify-center mb-4 border border-accent-amber/40">
                     <CheckCircle2 className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">Consultation Scheduled</h3>
-                  <p className="text-neutral-400 text-sm max-w-xs">
-                    Apurv's calendar link and Greffon onboarding briefing have been dispatched to <strong className="text-white">{clientEmail}</strong>.
+                  <h3 className="text-xl font-bold text-text-primary mb-2 font-geist">Consultation Scheduled</h3>
+                  <p className="text-text-secondary text-sm max-w-xs font-geist">
+                    Apurv's calendar link and Greffon onboarding briefing have been dispatched to <strong className="text-text-primary font-bold">{clientEmail}</strong>.
                   </p>
                 </div>
               ) : (
                 <form onSubmit={submitCallBooking} className="space-y-4">
                   <div>
-                    <h3 className="text-2xl font-bold font-display text-white mb-1">
+                    <h3 className="text-2xl font-normal font-geist text-text-primary mb-1">
                       Schedule a 1-on-1 Call
                     </h3>
-                    <p className="text-neutral-400 text-xs sm:text-sm">
+                    <p className="text-text-secondary text-xs font-geist">
                       Let's review your product roadmap, custom Shopify funnels, CRM apps, and start scaling your business.
                     </p>
                   </div>
 
                   <div className="space-y-3 pt-2">
                     <div>
-                      <label className="block text-xs font-medium text-neutral-300 mb-1">Your Email</label>
+                      <label className="block text-[10px] font-bold uppercase tracking-wider text-text-secondary mb-1 font-inter">Your Email</label>
                       <input 
                         type="email"
                         required
                         value={clientEmail}
                         onChange={(e) => setClientEmail(e.target.value)}
                         placeholder="you@company.com"
-                        className="w-full px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-500 text-sm focus:outline-none focus:border-neutral-500"
+                        className="w-full px-4 py-2.5 rounded-control bg-white border border-border-muted text-text-primary placeholder-text-secondary/40 text-sm focus:outline-none focus:border-text-primary font-geist"
                       />
                     </div>
                   </div>
 
-                  <div className="pt-2 flex items-center justify-end gap-3">
+                  <div className="pt-2 flex items-center justify-end gap-3 font-inter">
                     <button
                       type="button"
                       onClick={() => setShowCallModal(false)}
-                      className="px-4 py-2 rounded-xl text-xs font-semibold text-neutral-400 hover:text-white"
+                      className="px-4 py-2 text-xs font-bold text-text-secondary hover:text-text-primary cursor-pointer uppercase tracking-wider"
                     >
                       Cancel
                     </button>
                     <button
                       type="submit"
-                      className="px-6 py-2.5 rounded-xl bg-white text-black font-semibold text-xs hover:bg-neutral-200 transition-colors shadow-lg cursor-pointer glow-button"
+                      className="px-6 py-2.5 rounded-pill bg-surface-dark text-white font-bold text-xs hover:opacity-90 transition-colors shadow-sm cursor-pointer uppercase tracking-wider"
                     >
                       Confirm Booking
                     </button>
@@ -298,4 +298,3 @@ export default function FooterCTA({ onBookCall }: FooterCTAProps) {
     </footer>
   );
 }
-
