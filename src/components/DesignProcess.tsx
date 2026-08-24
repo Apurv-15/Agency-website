@@ -45,20 +45,20 @@ export default function DesignProcess({ onBookCall }: DesignProcessProps) {
   };
 
   return (
-    <section id="design-process" className="w-full bg-black text-white py-16 md:py-24 px-4 sm:px-6 md:px-10 relative overflow-hidden">
-      <div className="max-w-[1440px] mx-auto">
+    <section id="design-process" className="w-full bg-transparent text-text-primary py-16 md:py-24 px-4 sm:px-6 md:px-10 relative overflow-hidden rounded-[3rem] md:rounded-[5rem] -mt-12 md:-mt-20 z-10 shadow-[0_15px_30px_-15px_rgba(0,0,0,0.05),0_-15px_30px_-15px_rgba(0,0,0,0.05)]">
+      <div className="max-w-[1024px] mx-auto">
         
         {/* Main Grid: Left Sketching Image | Right Process Content */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-stretch">
           
-          {/* Left Column: Tall Rounded Mechanical Pencil Sketching Photo (5 cols) */}
+          {/* Left Column: Tall Rounded Photo (5 cols) */}
           <div className="lg:col-span-5 flex">
             <motion.div 
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative w-full h-[460px] sm:h-[560px] lg:h-full min-h-[500px] rounded-[1.8rem] sm:rounded-[2.4rem] overflow-hidden bg-neutral-900 border border-neutral-800/80 shadow-2xl group"
+              className="relative w-full h-[460px] sm:h-[560px] lg:h-full min-h-[500px] rounded-card-normal overflow-hidden bg-white border border-border-muted shadow-lg group"
               style={{ willChange: "transform, opacity" }}
             >
               <img 
@@ -67,7 +67,7 @@ export default function DesignProcess({ onBookCall }: DesignProcessProps) {
                 className="w-full h-full object-cover grayscale contrast-125 group-hover:scale-105 transition-transform duration-700" 
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
             </motion.div>
           </div>
 
@@ -77,13 +77,13 @@ export default function DesignProcess({ onBookCall }: DesignProcessProps) {
             {/* Header Area */}
             <div className="mb-8">
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-neutral-800 text-xs font-semibold text-neutral-300 mb-4 shadow-2xs glow-button">
-                <Sparkles className="w-3.5 h-3.5 text-emerald-400 animate-framer-spin" style={{ willChange: "transform" }} />
-                <span>Design process</span>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-border-muted text-xs font-bold text-text-primary mb-4 shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5 text-accent-amber animate-framer-spin" style={{ willChange: "transform" }} />
+                <span className="font-inter uppercase tracking-wide text-[10px]">Design process</span>
               </div>
 
               {/* Main Heading with Word Reveal */}
-              <h2 className="text-4xl sm:text-5xl md:text-6xl font-display font-bold text-white tracking-tight mb-4 leading-[1.08]">
+              <h2 className="text-4xl sm:text-5xl font-geist font-normal text-text-primary tracking-tight mb-4 leading-tight">
                 <TextWordReveal 
                   text="Process" 
                   delay={0.1}
@@ -92,9 +92,9 @@ export default function DesignProcess({ onBookCall }: DesignProcessProps) {
               </h2>
 
               {/* Subtitle */}
-              <p className="text-neutral-400 text-sm sm:text-base md:text-lg max-w-xl font-normal leading-relaxed mb-6">
+              <p className="text-text-secondary text-sm sm:text-base max-w-xl font-normal leading-relaxed mb-6 font-geist">
                 <TextWordReveal 
-                  text="crafting bold visuals that inspire and elevate brands with thought process."
+                  text="Crafting bold visuals that inspire and elevate brands through a methodical engineering process."
                   delay={0.2}
                   stagger={0.02}
                   blur={false}
@@ -105,18 +105,18 @@ export default function DesignProcess({ onBookCall }: DesignProcessProps) {
               <div className="flex flex-wrap items-center gap-3.5">
                 <button
                   onClick={handleBookCall}
-                  className="px-6 py-3 rounded-full bg-black hover:bg-neutral-900 text-white text-xs sm:text-sm font-semibold border border-neutral-700 hover:border-white/50 transition-all shadow-md active:scale-98 flex items-center gap-2 cursor-pointer glow-button"
+                  className="px-6 py-3 rounded-full bg-surface-dark hover:opacity-90 text-white text-xs sm:text-sm font-bold transition-all shadow-sm active:scale-98 flex items-center gap-2 cursor-pointer font-inter uppercase tracking-wider"
                 >
-                  <Calendar className="w-4 h-4 text-emerald-400" />
+                  <Calendar className="w-4 h-4 text-accent-amber" />
                   <span>Book a Free Call</span>
                 </button>
 
                 <button
                   onClick={scrollToProjects}
-                  className="px-6 py-3 rounded-full bg-black hover:bg-neutral-900 text-neutral-300 hover:text-white text-xs sm:text-sm font-semibold border border-neutral-800 hover:border-neutral-700 transition-all active:scale-98 flex items-center gap-1.5 cursor-pointer glow-button"
+                  className="px-6 py-3 rounded-full bg-white hover:border-text-primary text-text-primary text-xs sm:text-sm font-bold border border-border-muted transition-all active:scale-98 flex items-center gap-1.5 cursor-pointer font-inter uppercase tracking-wider"
                 >
                   <span>See Projects</span>
-                  <ArrowUpRight className="w-4 h-4 text-neutral-400" />
+                  <ArrowUpRight className="w-4 h-4 text-text-secondary" />
                 </button>
               </div>
             </div>
@@ -132,29 +132,29 @@ export default function DesignProcess({ onBookCall }: DesignProcessProps) {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: idx * 0.1 }}
-                    className="p-6 sm:p-7 rounded-[1.4rem] sm:rounded-[1.8rem] bg-neutral-950/80 hover:bg-neutral-900/60 border border-neutral-800/80 hover:border-neutral-700 transition-all shadow-lg"
+                    className="p-6 sm:p-7 rounded-card-normal bg-surface-light hover:bg-white border border-border-muted hover:border-text-primary transition-all shadow-sm"
                     style={{ willChange: "transform, opacity" }}
                   >
                     {/* Top Row: Icon & Step Number */}
                     <div className="flex items-center justify-between mb-3">
-                      <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white">
-                        <IconComponent className="w-5 h-5 text-neutral-200" />
+                      <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-white border border-border-muted">
+                        <IconComponent className="w-5 h-5 text-text-primary" />
                       </div>
-                      <span className="text-xs font-bold text-neutral-500 font-mono">
+                      <span className="text-xs font-bold text-accent-amber font-mono">
                         {step.number}
                       </span>
                     </div>
 
                     {/* Step Title */}
-                    <h3 className="text-xl sm:text-2xl font-bold font-display text-white mb-2">
+                    <h3 className="text-lg sm:text-xl font-bold font-geist text-text-primary mb-2">
                       {step.title}
                     </h3>
 
                     {/* Subtle Divider */}
-                    <div className="w-full h-px bg-neutral-800/60 my-2.5" />
+                    <div className="w-full h-px bg-border-muted/50 my-2.5" />
 
                     {/* Step Description */}
-                    <p className="text-xs sm:text-sm text-neutral-400 leading-relaxed font-normal">
+                    <p className="text-xs sm:text-sm text-text-secondary leading-relaxed font-normal font-geist">
                       {step.description}
                     </p>
                   </motion.div>
@@ -170,4 +170,3 @@ export default function DesignProcess({ onBookCall }: DesignProcessProps) {
     </section>
   );
 }
-
