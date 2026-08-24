@@ -35,15 +35,13 @@ export const TextWordReveal: React.FC<TextWordRevealProps> = ({
     hidden: {
       opacity: 0,
       y: 16,
-      filter: blur ? "blur(8px)" : "blur(0px)",
     },
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
       transition: {
         duration: 0.6,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.16, 1, 0.3, 1] as any,
       },
     },
   };
@@ -61,8 +59,7 @@ export const TextWordReveal: React.FC<TextWordRevealProps> = ({
         <motion.span
           key={`${word}-${i}`}
           variants={wordVariants}
-          className={`inline-block mr-[0.25em] will-change-transform ${wordClassName}`}
-          style={{ willChange: "transform, opacity, filter" }}
+          className={`inline-block mr-[0.25em] ${wordClassName}`}
         >
           {word}
         </motion.span>
