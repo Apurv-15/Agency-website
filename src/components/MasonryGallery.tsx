@@ -264,7 +264,7 @@ export const MasonryGallery: React.FC<MasonryGalleryProps> = ({
           key={item.id}
           data-key={item.id}
           className={cn(
-            'absolute overflow-hidden rounded-[1.4rem] sm:rounded-[1.8rem] bg-neutral-900 border border-neutral-800/80 transition-all shadow-xl group',
+            'absolute overflow-hidden rounded-card-normal bg-surface-light border border-border-muted transition-all shadow-sm group',
             itemClassName
           )}
           style={{
@@ -281,12 +281,12 @@ export const MasonryGallery: React.FC<MasonryGalleryProps> = ({
           />
 
           {/* Vignette Shadow Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 group-hover:opacity-75 transition-opacity" />
 
           {/* Title tag if available */}
           {item.title && (
             <div className="absolute top-4 left-4 pointer-events-none">
-              <span className="px-3 py-1 rounded-full bg-black/50 backdrop-blur-md text-[11px] font-mono text-neutral-300 border border-white/10">
+              <span className="px-3 py-1 rounded-full bg-white/90 text-[11px] font-mono text-text-primary border border-border-muted shadow-2xs">
                 {item.title}
               </span>
             </div>
@@ -299,10 +299,10 @@ export const MasonryGallery: React.FC<MasonryGalleryProps> = ({
                 e.stopPropagation();
                 handleItemClick(item);
               }}
-              className="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6 py-2.5 sm:py-3 px-4 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md border border-white/30 text-white text-xs sm:text-sm font-semibold flex items-center justify-center gap-1.5 transition-all shadow-lg hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+              className="absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6 py-2.5 sm:py-3 px-4 rounded-full bg-white/95 hover:bg-white border border-border-muted text-text-primary text-xs sm:text-sm font-bold flex items-center justify-center gap-1.5 transition-all shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
             >
               <span>View Casestudy</span>
-              <ArrowUpRight className="w-4 h-4 text-white" />
+              <ArrowUpRight className="w-4 h-4 text-text-primary" />
             </button>
           )}
         </div>
