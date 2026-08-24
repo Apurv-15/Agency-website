@@ -1,33 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Geist:wght@100..900&family=Great+Vibes&family=Inter:wght@300;400;500;600;700&family=Nanum+Pen+Script&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap');
 @import "tailwindcss";
 
-@font-face {
-    font-family: "Helvetica Regular";
-    src: url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.eot");
-    src: url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.eot?#iefix")format("embedded-opentype"),
-    url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.woff2")format("woff2"),
-    url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.woff")format("woff"),
-    url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.ttf")format("truetype"),
-    url("https://db.onlinewebfonts.com/t/a64ff11d2c24584c767f6257e880dc65.svg#Helvetica Regular")format("svg");
-}
-
 @theme {
-  --font-helvetica: "Helvetica Regular", ui-sans-serif, system-ui, sans-serif;
-  --font-playfair: "Playfair Display", serif;
+  --font-geist: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-nanum: "Nanum Pen Script", cursive;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-script: "Great Vibes", cursive;
+  --font-newsreader: "Newsreader", serif;
   
-  --radius-xl: 1.5rem;
-  --radius-2xl: 2rem;
-  --radius-3xl: 3rem;
+  --color-bg-white: #FFFFFF;
+  --color-surface-light: #F7F7F7;
+  --color-surface-dark: #000000;
+  --color-text-primary: #000000;
+  --color-text-secondary: #5E5E5E;
+  --color-border-muted: #D6D6D6;
+  --color-accent-amber: #E0A533;
+  --color-accent-blue: #0000EE;
+  --color-chip-tint: #CCDAE3;
+  --color-accent-red: #FF2600;
+
+  --radius-control: 4px;
+  --radius-card-normal: 27px;
+  --radius-card-large: 32px;
+  --radius-pill: 9999px;
   
-  --color-glass: rgba(255, 255, 255, 0.1);
-  --color-glass-dark: rgba(0, 0, 0, 0.2);
+  --spacing-section: 180px;
 }
 
 :root {
-  font-family: var(--font-helvetica);
+  font-family: var(--font-geist);
 }
 
-/* Lenis Smooth Scrolling Styles */
+
+/* Lenis Smooth Scroll Setup */
 html.lenis, html.lenis body {
   height: auto;
 }
@@ -44,16 +50,73 @@ html.lenis, html.lenis body {
   overflow: hidden;
 }
 
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
-}
-
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #FFFFFF;
+  color: #000000;
 }
+
+.font-geist {
+  font-family: var(--font-geist);
+}
+
+.font-inter {
+  font-family: var(--font-inter);
+}
+
+.font-nanum {
+  font-family: var(--font-nanum);
+}
+
+.display-lg {
+  font-family: var(--font-geist);
+  font-size: 56px;
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -3.4px;
+}
+
+.headline-md {
+  font-family: var(--font-geist);
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -1.6px;
+}
+
+.body-md {
+  font-family: var(--font-inter);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.75;
+}
+
+.label-md {
+  font-family: var(--font-geist);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.8;
+  letter-spacing: -0.8px;
+}
+
+.body-base {
+  font-family: var(--font-geist);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.accent-script {
+  font-family: var(--font-nanum);
+  font-style: normal;
+}
+
+.radial-dot-pattern {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 0.6px, rgba(0, 0, 0, 0) 1.4px);
+  background-size: 12px 12px;
+}
+
 
 /* Keyframes for Motion & Transitions */
 @keyframes __framer-loading-spin {
@@ -126,5 +189,21 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+/* Sleek Dark Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 9999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.45);
 }
 
