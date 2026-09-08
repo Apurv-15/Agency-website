@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Play } from "lucide-react";
+import { Play, ArrowDown, ChevronDown } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +15,28 @@ export default function TransitionReveal() {
   const textHeaderRef = useRef<HTMLDivElement>(null);
   const statsRowRef = useRef<HTMLDivElement>(null);
   const playButtonRef = useRef<HTMLDivElement>(null);
+  const scrollIndicatorRef = useRef<HTMLDivElement>(null);
+  const cursorFollowerRef = useRef<HTMLDivElement>(null);
+
+  const [isCursorVisible, setIsCursorVisible] = useState(false);
+  const [isOverButton, setIsOverButton] = useState(false);
+
+  useEffect(() => {
+    // QuickTo for 120fps ultra-smooth cursor following physics
+    const cursor = cursorFollowerRef.current;
+    if (!cursor) return;
+
+    const setX = gsap.quickTo(cursor, "x", { duration: 0.25, ease: "power3" });
+    const setY = gsap.quickTo(cursor, "y", { duration: 0.25, ease: "power3" });
+
+    const handleMouseMove = (e: MouseEvent) => {
+      setX(e.clientX);
+      setY(e.clientY);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -33,6 +55,19 @@ export default function TransitionReveal() {
           pinSpacing: true,
         },
       });
+
+      // ── Scroll indicator fades out immediately upon scrolling ──
+      tl.to(
+        scrollIndicatorRef.current,
+        {
+          opacity: 0,
+          scale: 0.9,
+          y: 20,
+          ease: "power2.out",
+          duration: 0.1,
+        },
+        0
+      );
 
       // ── BEAT 1 (0% → 30%): Text UI moves out, video expands to TRUE 100vw x 100vh FULL SCREEN ──
       tl.to(
@@ -97,8 +132,43 @@ export default function TransitionReveal() {
     return () => ctx.revert();
   }, []);
 
+  const handleScrollClick = () => {
+    if (containerRef.current) {
+      const targetScroll = containerRef.current.offsetTop + window.innerHeight * 0.8;
+      window.scrollTo({ top: targetScroll, behavior: "smooth" });
+    }
+  };
+
   return (
-    <section ref={containerRef} className="relative w-full h-[320vh] bg-transparent text-black">
+    <section 
+      ref={containerRef} 
+      className="relative w-full h-[320vh] bg-transparent text-black"
+      onMouseEnter={() => setIsCursorVisible(true)}
+      onMouseLeave={() => setIsCursorVisible(false)}
+    >
+      {/* ── Custom Interactive Follower Cursor (Scroll Down Pill) ── */}
+      <div
+        ref={cursorFollowerRef}
+        className={`fixed top-0 left-0 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-50 transition-opacity duration-300 ${
+          isCursorVisible ? "opacity-100" : "opacity-0"
+        }`}
+        style={{ willChange: "transform, opacity" }}
+      >
+        <div
+          className={`flex items-center gap-2 px-4 py-2 rounded-full backdrop-blur-md border shadow-2xl transition-all duration-200 ${
+            isOverButton
+              ? "bg-white/90 text-black border-black/10 scale-90"
+              : "bg-black/80 text-white border-white/20 scale-100"
+          }`}
+        >
+          <div className="w-2 h-2 rounded-full bg-accent-amber animate-pulse" />
+          <span className="text-[11px] font-bold font-inter tracking-wider uppercase whitespace-nowrap">
+            {isOverButton ? "Click" : "Scroll Down"}
+          </span>
+          <ArrowDown className="w-3.5 h-3.5 animate-bounce text-accent-amber" />
+        </div>
+      </div>
+
       {/* Sticky Viewport Container */}
       <div
         ref={stickyRef}
@@ -120,7 +190,7 @@ export default function TransitionReveal() {
         {/* Dynamic Video Showcase - Absolutely centered, expands to 100vw x 100vh full screen, then shrinks to rounded card & scrolls naturally */}
         <div
           ref={videoWrapperRef}
-          className="absolute z-20 overflow-hidden bg-neutral-900 shadow-2xl flex items-center justify-center will-change-transform"
+          className="absolute z-20 overflow-hidden bg-neutral-900 shadow-2xl flex items-center justify-center will-change-transform group cursor-none"
           style={{
             width: "88vw",
             height: "62vh",
@@ -142,10 +212,32 @@ export default function TransitionReveal() {
           {/* Subtle vignette overlay */}
           <div className="absolute inset-0 bg-black/10 pointer-events-none" />
 
+          {/* ── Ambient Floating Scroll Down Cue Badge at Center Bottom of Video ── */}
+          <div
+            ref={scrollIndicatorRef}
+            onClick={handleScrollClick}
+            onMouseEnter={() => setIsOverButton(true)}
+            onMouseLeave={() => setIsOverButton(false)}
+            className="absolute bottom-6 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-1.5 cursor-pointer pointer-events-auto select-none group/scroll"
+          >
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-white shadow-lg transition-all duration-300 group-hover/scroll:scale-105 group-hover/scroll:border-white/40">
+              {/* Minimal mouse pill graphic */}
+              <div className="w-3.5 h-5 rounded-full border border-white/70 flex justify-center pt-1">
+                <div className="w-1 h-1.5 bg-white rounded-full animate-scroll-bounce" />
+              </div>
+              <span className="text-[11px] font-semibold tracking-wider font-geist uppercase text-white/90">
+                Scroll to Expand
+              </span>
+              <ChevronDown className="w-3.5 h-3.5 text-white/70 group-hover/scroll:translate-y-0.5 transition-transform" />
+            </div>
+          </div>
+
           {/* Floating 'Play Reel' Pill Button (Visible when video eases out into rounded card) */}
           <div
             ref={playButtonRef}
             className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 opacity-0 pointer-events-auto"
+            onMouseEnter={() => setIsOverButton(true)}
+            onMouseLeave={() => setIsOverButton(false)}
           >
             <button
               onClick={() => {
@@ -174,3 +266,4 @@ export default function TransitionReveal() {
     </section>
   );
 }
+

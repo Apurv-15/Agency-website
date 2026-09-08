@@ -2,16 +2,15 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AgencyServicesPage from "./components/AgencyServicesPage";
 import AiInfrastructureLanding from "./components/AiInfrastructureLanding";
-import Hero from "./components/Hero";
+import CloudVideoScrubSection from "./components/CloudVideoScrubSection";
 import AboutMeily from "./components/AboutMeily";
-import DesignProcess from "./components/DesignProcess";
+import PerspectiveTextReveal from "./components/PerspectiveTextReveal";
 import ClientReviews from "./components/ClientReviews";
 import FooterCTA from "./components/FooterCTA";
 import TransitionReveal from "./components/TransitionReveal";
-import FloatingGridShowcase from "./components/FloatingGridShowcase";
-import ServicesPillStack from "./components/ServicesPillStack";
-import WhyChooseUs from "./components/WhyChooseUs";
+import ProjectsBento from "./components/ProjectsBento";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -80,36 +79,48 @@ export default function App() {
       className="min-h-screen text-text-primary selection:bg-neutral-800 selection:text-white font-geist transition-colors duration-700 ease-in-out bg-[#FAF9F6]"
       style={{ transition: "background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1)" }}
     >
-      {/* Section 1: The Next Layer of Intelligence Hero */}
+      {/* Section 1: Temporarily hidden - Black Agency Office → iMac Zoom Landing Hero */}
+      {/* 
       <section data-bg="#050505" className="w-full">
         <AiInfrastructureLanding />
       </section>
+      */}
 
-      {/* Section 2: Video Transition Reveal (Clean White) */}
+      {/* Section 1 (Now Primary Hero): Cloud Video Scrub Section */}
+      <section data-bg="#FAF9F6" className="w-full">
+        <CloudVideoScrubSection />
+      </section>
+
+      {/* Section 3: Master Agency Services Bento (Dedicated Naturally Scrollable Section) */}
+      <section data-bg="#FAF9F6" className="w-full" id="services">
+        <AgencyServicesPage />
+      </section>
+
+      {/* Section 4: Selected Work (6-Card Bento Showcase) */}
+      <section data-bg="#FAF9F6" className="w-full" id="projects">
+        <ProjectsBento />
+      </section>
+
+      {/* Section 4: Video Transition Reveal (Clean White) */}
       <section data-bg="#FFFFFF" className="w-full">
         <TransitionReveal />
       </section>
 
-      {/* Section 3: Why Brands Keep Coming Back (Apple Magic Move Boxes Grid - Clean White) */}
-      <section data-bg="#FFFFFF" className="w-full">
-        <WhyChooseUs />
-      </section>
-
-      {/* Section 4: The Services We Provide (Clean White) */}
-      <section data-bg="#FFFFFF" className="w-full">
-        <ServicesPillStack />
-      </section>
-
       {/* Section 5: Meet Apurv / About (Deep Dark Slate) */}
-      <section data-bg="#0B0C0E" className="w-full">
+      <section data-bg="#0B0C0E" className="w-full" id="about">
         <div id="about-meily">
           <AboutMeily />
         </div>
       </section>
 
-      {/* Section 6: Design Process (Clean White) */}
-      <section data-bg="#FFFFFF" className="w-full">
-        <DesignProcess />
+      {/* Section 6: Perspective 3D Text Reveal ("Building products that customers love...") */}
+      <section data-bg="#000000" className="w-full min-h-screen flex items-center justify-center">
+        <PerspectiveTextReveal
+          text="Building products that customers love isn’t magic, it requires:"
+          perspective={1100}
+          initialRotateX={28}
+          scrubSpeed={1}
+        />
       </section>
 
       {/* Section 7: Client Reviews (Obsidian Dark) */}
@@ -118,7 +129,7 @@ export default function App() {
       </section>
 
       {/* Section 8: Contact & Footer CTA (Clean White) */}
-      <section data-bg="#FFFFFF" className="w-full">
+      <section data-bg="#FFFFFF" className="w-full" id="contact">
         <FooterCTA />
       </section>
     </main>

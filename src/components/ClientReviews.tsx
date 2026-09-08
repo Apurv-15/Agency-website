@@ -99,160 +99,237 @@ export default function ClientReviews() {
   };
 
   return (
-    <section id="client-reviews" className="relative w-full py-20 sm:py-28 px-4 sm:px-6 md:px-10 bg-transparent text-black font-geist select-none overflow-hidden">
-      <div className="max-w-[1240px] mx-auto flex flex-col items-center">
+    <section id="client-reviews" className="relative w-full py-24 sm:py-32 px-4 sm:px-6 md:px-10 bg-transparent text-white font-geist select-none overflow-hidden">
+      <div className="max-w-[1240px] mx-auto">
         
-        {/* Header with Background Watermark "Testimonials" (Matches reference image) */}
-        <div className="relative w-full flex flex-col items-center text-center mb-10 sm:mb-14">
-          <span className="text-xs sm:text-sm font-mono text-neutral-500 font-bold tracking-tight mb-1">
-            (Why clients love Apurv)
-          </span>
+        {/* /superdesign Editorial Section Header */}
+        <div className="relative w-full mb-10 sm:mb-14">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-neutral-800/80 pb-6 relative z-10">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-neutral-400 text-xs font-inter font-bold tracking-[0.18em] uppercase mb-4">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E0A533]" />
+                <span>Client Endorsements</span>
+              </div>
+              <h2 className="text-3xl sm:text-5xl md:text-6xl font-normal tracking-[-2px] sm:tracking-[-3px] text-white leading-[1.08]">
+                Proven outcomes. <br />
+                <span className="font-serif-italic font-normal tracking-normal text-[1.12em] text-neutral-300">
+                  Verified by founders.
+                </span>
+              </h2>
+            </div>
 
-          <h2 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter text-neutral-200/60 uppercase pointer-events-none select-none font-geist">
-            Testimonials
-          </h2>
+            <div className="flex flex-col sm:items-end text-left sm:text-right">
+              <div className="flex items-center gap-1.5 text-[#E0A533] mb-1">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={14} fill="#E0A533" strokeWidth={0} />
+                ))}
+                <span className="text-sm font-inter font-bold text-white ml-1">5.0 / 5.0</span>
+              </div>
+              <span className="text-xs font-inter text-neutral-400 font-medium">
+                100% On-Time Enterprise Delivery
+              </span>
+            </div>
+          </div>
+
+          {/* Depth Background Watermark */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none z-0 opacity-[0.035] select-none overflow-hidden">
+            <span className="text-[72px] sm:text-[130px] md:text-[180px] lg:text-[220px] font-geist font-black tracking-[-0.04em] uppercase whitespace-nowrap text-white block">
+              TESTIMONIALS
+            </span>
+          </div>
         </div>
 
-        {/* Dual Bento Grid Layout (Matches Reference Screenshot) */}
-        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        {/* Dual Bento Grid Layout (Superdesign Editorial Layout) */}
+        <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch relative z-10">
           
-          {/* LEFT BENTO CARD: High-Contrast Dark Stats Stack */}
-          <div className="col-span-1 lg:col-span-4 bg-neutral-950 rounded-[32px] sm:rounded-[40px] p-8 sm:p-10 border border-neutral-800 shadow-2xl flex flex-col justify-between relative overflow-hidden min-h-[460px] sm:min-h-[520px]">
-            
-            {/* Smokey Abstract Texture Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-black via-neutral-950 to-neutral-900 pointer-events-none" />
-            <img 
-              src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1000&auto=format&fit=crop" 
-              alt="Smokey texture overlay" 
-              className="absolute inset-0 w-full h-full object-cover opacity-20 grayscale pointer-events-none mix-blend-overlay"
+          {/* LEFT BENTO CARD: /superdesign Architectural Stats Card */}
+          <div className="col-span-1 lg:col-span-4 bg-[#0D0F12] rounded-[32px] p-8 sm:p-10 border border-neutral-800/80 shadow-2xl flex flex-col justify-between relative overflow-hidden min-h-[460px] sm:min-h-[520px]">
+            {/* Fine Dotted Subtle Grid Accent */}
+            <div 
+              className="absolute inset-0 pointer-events-none opacity-[0.14]"
+              style={{
+                backgroundImage: 'radial-gradient(rgb(255, 255, 255) 0.6px, rgba(0, 0, 0, 0) 1.4px)',
+                backgroundSize: '20px 20px',
+              }}
             />
 
-            <div className="relative z-10 space-y-8 sm:space-y-10 my-auto">
+            {/* Top Tag */}
+            <div className="relative z-10 flex items-center justify-between pb-6 border-b border-neutral-800/60">
+              <span className="text-[11px] font-inter font-bold tracking-[0.2em] text-[#E0A533] uppercase">
+                PERFORMANCE METRICS
+              </span>
+              <span className="text-xs font-script text-neutral-400 rotate-[-4deg]">
+                measured impact
+              </span>
+            </div>
+
+            {/* Metric Stack (Geist Display-Lg style) */}
+            <div className="relative z-10 space-y-7 sm:space-y-8 my-auto py-4">
               {/* Stat 1 */}
               <div>
-                <h3 className="text-5xl sm:text-6xl font-extrabold text-white tracking-tight font-geist">
-                  26+
-                </h3>
-                <p className="text-xs sm:text-sm font-medium text-neutral-400 font-geist mt-1">
-                  Finalized Projects
+                <div className="flex items-baseline gap-2">
+                  <h3 className="text-4xl sm:text-5xl font-normal text-white tracking-[-2px] font-geist">
+                    26+
+                  </h3>
+                  <span className="text-xs font-inter font-bold text-[#E0A533] uppercase">Shipped</span>
+                </div>
+                <p className="text-xs sm:text-[13px] font-normal text-neutral-400 font-geist mt-1">
+                  Full-stack digital products & platforms
                 </p>
               </div>
+
+              <div className="w-full h-px bg-neutral-800/60" />
 
               {/* Stat 2 */}
               <div>
-                <h3 className="text-5xl sm:text-6xl font-extrabold text-white tracking-tight font-geist">
-                  98%
-                </h3>
-                <p className="text-xs sm:text-sm font-medium text-neutral-400 font-geist mt-1">
-                  Client satisfaction rate
+                <div className="flex items-baseline gap-2">
+                  <h3 className="text-4xl sm:text-5xl font-normal text-white tracking-[-2px] font-geist">
+                    98%
+                  </h3>
+                  <span className="text-xs font-inter font-bold text-emerald-400 uppercase">Retention</span>
+                </div>
+                <p className="text-xs sm:text-[13px] font-normal text-neutral-400 font-geist mt-1">
+                  Client satisfaction & re-engagement rate
                 </p>
               </div>
 
+              <div className="w-full h-px bg-neutral-800/60" />
+
               {/* Stat 3 */}
               <div>
-                <h3 className="text-5xl sm:text-6xl font-extrabold text-white tracking-tight font-geist">
-                  10M
-                </h3>
-                <p className="text-xs sm:text-sm font-medium text-neutral-400 font-geist mt-1">
-                  Gross Revenue Generated
+                <div className="flex items-baseline gap-2">
+                  <h3 className="text-4xl sm:text-5xl font-normal text-white tracking-[-2px] font-geist">
+                    $10M+
+                  </h3>
+                  <span className="text-xs font-inter font-bold text-[#E0A533] uppercase">Scaled</span>
+                </div>
+                <p className="text-xs sm:text-[13px] font-normal text-neutral-400 font-geist mt-1">
+                  Gross client revenue generated & processed
                 </p>
               </div>
             </div>
 
+            {/* Bottom Card Footer with Avatar Trust Group */}
+            <div className="relative z-10 pt-4 border-t border-neutral-800/60 flex items-center justify-between">
+              <div className="flex -space-x-2">
+                {testimonials.map((t) => (
+                  <img
+                    key={t.id}
+                    src={t.avatar}
+                    alt={t.name}
+                    className="w-7 h-7 rounded-full border border-neutral-700 object-cover shadow-xs"
+                  />
+                ))}
+              </div>
+              <span className="text-[11px] font-inter font-bold text-neutral-400">
+                Verified Global Leaders
+              </span>
+            </div>
+
           </div>
 
-          {/* RIGHT BENTO CARD: Full-Bleed Photo Review Carousel */}
-          <div className="col-span-1 lg:col-span-8 relative rounded-[32px] sm:rounded-[40px] overflow-hidden border border-neutral-200/40 shadow-2xl min-h-[460px] sm:min-h-[520px] flex flex-col justify-between p-8 sm:p-12 text-white bg-neutral-900">
+          {/* RIGHT BENTO CARD: Full-Bleed Editorial Review Card */}
+          <div className="col-span-1 lg:col-span-8 relative rounded-[32px] overflow-hidden border border-neutral-800/80 shadow-2xl min-h-[460px] sm:min-h-[520px] flex flex-col justify-between p-8 sm:p-12 text-white bg-neutral-950">
             
-            {/* Dynamic Full-Bleed Background Image */}
+            {/* Dynamic Full-Bleed Background Image with subtle zoom */}
             <AnimatePresence mode="wait">
               <motion.img
                 key={current.id}
                 src={current.bgImage}
                 alt={current.company}
-                initial={{ opacity: 0, scale: 1.05 }}
+                initial={{ opacity: 0, scale: 1.06 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-110"
+                exit={{ opacity: 0, scale: 0.96 }}
+                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-0 w-full h-full object-cover object-center grayscale contrast-125 opacity-35"
               />
             </AnimatePresence>
 
-            {/* Dark Vignette Overlay for Crisp Readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/40 pointer-events-none" />
+            {/* Film grain / dark vignette gradient */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-black/50 pointer-events-none" />
+            <div className="absolute inset-0 bg-radial from-transparent via-black/40 to-black/90 pointer-events-none" />
 
-            {/* TOP BAR: Index Counter 01 / 04 */}
+            {/* TOP BAR: Index Counter + Project Badge */}
             <div className="relative z-10 flex items-center justify-between">
-              <div className="flex flex-col gap-1.5">
-                <span className="text-xs font-mono font-bold tracking-widest text-neutral-300">
+              <div className="flex items-center gap-3">
+                <span className="text-[11px] font-inter font-bold tracking-[0.2em] text-[#E0A533] uppercase">
                   0{currentIndex + 1} / 0{testimonials.length}
                 </span>
-                <div className="w-12 h-0.5 bg-white/30 rounded-full overflow-hidden">
+                <div className="w-16 h-1 bg-white/15 rounded-full overflow-hidden">
                   <motion.div 
-                    className="h-full bg-white"
+                    className="h-full bg-[#E0A533]"
                     initial={{ width: "0%" }}
                     animate={{ width: `${((currentIndex + 1) / testimonials.length) * 100}%` }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                   />
                 </div>
               </div>
 
-              <span className="text-[10px] font-mono uppercase px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-neutral-200">
-                {current.projectType}
-              </span>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[11px] font-inter font-bold tracking-tight text-white">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E0A533]" />
+                <span>{current.projectType}</span>
+              </div>
             </div>
 
             {/* MAIN QUOTE & AUTHOR DETAILS */}
-            <div className="relative z-10 max-w-[680px] my-auto py-6">
+            <div className="relative z-10 max-w-[700px] my-auto py-6">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={current.id}
-                  initial={{ opacity: 0, y: 15 }}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -15 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                  exit={{ opacity: 0, y: -16 }}
+                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <blockquote className="text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-white leading-snug font-geist mb-6">
+                  <blockquote className="text-xl sm:text-2xl md:text-[28px] font-normal tracking-[-0.8px] sm:tracking-[-1.2px] text-white leading-[1.35] font-geist mb-7">
                     "{current.quote}"
                   </blockquote>
 
-                  <div>
-                    <h4 className="text-base sm:text-lg font-bold text-white font-geist">
-                      {current.name}
-                    </h4>
-                    <p className="text-xs sm:text-sm text-neutral-300 font-geist mt-0.5">
-                      {current.role}, <span className="text-white font-semibold">{current.company}</span>
-                    </p>
+                  {/* Author Persona Pill */}
+                  <div className="flex items-center gap-3.5">
+                    <img
+                      src={current.avatar}
+                      alt={current.name}
+                      className="w-12 h-12 rounded-full object-cover border-2 border-white/20 shadow-md"
+                    />
+                    <div>
+                      <h4 className="text-base sm:text-lg font-medium text-white font-geist tracking-tight">
+                        {current.name}
+                      </h4>
+                      <p className="text-xs sm:text-[13px] text-neutral-400 font-geist">
+                        {current.role} · <span className="text-white font-medium">{current.company}</span>
+                      </p>
+                    </div>
                   </div>
                 </motion.div>
               </AnimatePresence>
             </div>
 
-            {/* BOTTOM NAV CONTROLS: Circular Arrow Buttons (< and >) */}
-            <div className="relative z-10 flex items-center justify-between pt-4 border-t border-white/15">
+            {/* BOTTOM NAV CONTROLS: Superdesign Pill CTA & Circular Arrow Controls */}
+            <div className="relative z-10 flex items-center justify-between pt-5 border-t border-white/15">
               <button
                 onClick={() => setShowCallModal(true)}
-                className="text-xs font-semibold text-neutral-300 hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white text-black text-xs font-geist font-medium hover:bg-neutral-200 transition-all shadow-md cursor-pointer hover:scale-[1.02] active:scale-[0.98] group"
               >
                 <span>Book a Strategy Call</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 text-neutral-600 group-hover:translate-x-0.5 group-hover:text-black transition-transform" />
               </button>
 
-              <div className="flex items-center gap-3">
+              <div className="flex items-center gap-2.5">
                 <button
                   onClick={prevTestimonial}
                   aria-label="Previous Testimonial"
-                  className="p-3.5 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 backdrop-blur-md border border-white/20 text-white transition-all cursor-pointer shadow-lg"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 backdrop-blur-md border border-white/15 text-white transition-all flex items-center justify-center cursor-pointer shadow-sm hover:border-white/30"
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="w-4 h-4" />
                 </button>
 
                 <button
                   onClick={nextTestimonial}
                   aria-label="Next Testimonial"
-                  className="p-3.5 rounded-full bg-white/10 hover:bg-white/25 active:scale-95 backdrop-blur-md border border-white/20 text-white transition-all cursor-pointer shadow-lg"
+                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 active:scale-95 backdrop-blur-md border border-white/15 text-white transition-all flex items-center justify-center cursor-pointer shadow-sm hover:border-white/30"
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

@@ -285,7 +285,8 @@ export default function AiInfrastructureLanding() {
           position: absolute;
           left: calc(74.9 * var(--u));
           top: calc(230.5 * var(--u) + calc(264.5 * var(--h)));
-          width: calc(175.6 * var(--h));
+          min-width: calc(185.0 * var(--h));
+          padding: 0 calc(24.0 * var(--h));
           height: calc(50.0 * var(--h));
           background: var(--pill);
           border-radius: 999px;
@@ -293,7 +294,7 @@ export default function AiInfrastructureLanding() {
           align-items: center;
           justify-content: center;
           color: var(--pill-ink);
-          font-size: calc(20.6 * var(--h));
+          font-size: calc(20.0 * var(--h));
           font-weight: 500;
           pointer-events: auto;
           transition: opacity 0.25s ease, transform 0.25s ease;
@@ -311,7 +312,7 @@ export default function AiInfrastructureLanding() {
 
         .ghost {
           position: absolute;
-          left: calc(74.9 * var(--u) + calc(220.6 * var(--h)));
+          left: calc(74.9 * var(--u) + calc(240.0 * var(--h)));
           top: calc(230.5 * var(--u) + calc(279.5 * var(--h)));
           font-size: calc(20.6 * var(--h));
           font-weight: 500;
@@ -915,14 +916,14 @@ export default function AiInfrastructureLanding() {
           </a>
 
           <nav className="links" aria-label="Primary">
+            <a href="#services">Services</a>
+            <a href="#projects">Work</a>
             <a href="#about">About</a>
-            <a href="#features">Features</a>
-            <a href="#faq">FAQ</a>
             <a href="#contact">Contact</a>
           </nav>
 
-          <a href="#get-started" className="pill-nav">
-            <span>Get Started</span>
+          <a href="#services" className="pill-nav">
+            <span>Explore Services</span>
           </a>
 
           <button className="burger" id="burger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="menu">
@@ -936,14 +937,14 @@ export default function AiInfrastructureLanding() {
           <div className="menu-inner">
             <p className="menu-eyebrow">Menu</p>
             <ul className="menu-list">
+              <li><a href="#services" className="menu-link">Services</a></li>
+              <li><a href="#projects" className="menu-link">Work</a></li>
               <li><a href="#about" className="menu-link">About</a></li>
-              <li><a href="#features" className="menu-link">Features</a></li>
-              <li><a href="#faq" className="menu-link">FAQ</a></li>
               <li><a href="#contact" className="menu-link">Contact</a></li>
             </ul>
             <div className="menu-foot">
-              <a href="#get-started" className="pill-cta menu-link"><span>Get Started</span></a>
-              <a href="#architecture" className="ghost menu-link">View Architecture</a>
+              <a href="#services" className="pill-cta menu-link"><span>Explore Services</span></a>
+              <a href="#projects" className="ghost menu-link">View Selected Work</a>
             </div>
           </div>
         </nav>
@@ -951,21 +952,21 @@ export default function AiInfrastructureLanding() {
         {/* HERO CONTENT */}
         <main className="hero">
           <h1 className="headline">
-            <span>The Next Layer</span>
-            <span>of Intelligence</span>
+            <span>Websites That Turn</span>
+            <span>Visitors Into Clients</span>
           </h1>
 
           <p className="sub">
-            <span>A unified infrastructure platform to help teams build,</span>
-            <span>ship, and scale AI systems with confidence.</span>
+            <span>We build high-converting websites and digital experiences</span>
+            <span>that establish instant trust and grow your revenue on autopilot.</span>
           </p>
 
           <div className="actions">
-            <a href="#get-started" className="pill-cta">
-              <span>Get Started</span>
+            <a href="#contact" className="pill-cta">
+              <span>Get More Clients</span>
             </a>
-            <a href="#architecture" className="ghost">
-              View Architecture
+            <a href="#projects" className="ghost">
+              See Our Results →
             </a>
           </div>
         </main>
