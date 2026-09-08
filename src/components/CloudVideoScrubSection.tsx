@@ -148,36 +148,36 @@ export default function CloudVideoScrubSection() {
         <div className="absolute inset-0 pointer-events-none z-10 flex flex-col justify-between">
           
           {/* ═══════════════════════════════════════════════════════════════════
-              SCENE 1: /superdesign SWISS-GRID EDITORIAL HERO OVERLAY
+              SCENE 1: SWISS-GRID EDITORIAL HERO OVERLAY (LEFT ALIGNED)
               ═══════════════════════════════════════════════════════════════════ */}
           <div
             onMouseMove={handleMouseMove}
-            className="absolute inset-0 flex flex-col items-center justify-between px-6 sm:px-10 md:px-14 lg:px-16 py-6 sm:py-8 pointer-events-none select-none"
+            className="absolute inset-0 flex flex-col justify-between px-6 sm:px-10 md:px-14 lg:px-16 py-6 sm:py-8 pointer-events-none select-none"
             style={{
               opacity: s1Opacity,
-              transform: `perspective(1200px) scale(${s1Scale}) rotateX(${mousePos.y * -3}deg) rotateY(${mousePos.x * 3}deg)`,
+              transform: `perspective(1200px) scale(${s1Scale}) rotateX(${mousePos.y * -2}deg) rotateY(${mousePos.x * 2}deg)`,
               transition: 'opacity 0.2s ease-out, transform 0.15s cubic-bezier(0.2, 0, 0.2, 1)',
               willChange: 'transform, opacity',
             }}
           >
-            {/* Superdesign Edge-to-Edge 60px Navbar Bar */}
-            <div className="w-full max-w-[1360px] h-[60px] flex items-center justify-between relative z-20">
+            {/* Top Navbar */}
+            <div className="w-full max-w-[1440px] mx-auto h-[60px] flex items-center justify-between relative z-20">
               <StaggerItem visible={s1Visible} delay={0}>
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-geist font-semibold text-xs tracking-tight shadow-xs">
                     G
                   </div>
                   <div className="flex items-center gap-2.5">
-                    <span className="text-xs sm:text-[13px] font-geist font-semibold tracking-tight text-black">
+                    <span className="text-xs sm:text-[13px] font-geist font-semibold tracking-wider text-black">
                       GREFFON
                     </span>
                   </div>
                 </div>
               </StaggerItem>
 
-              {/* Center Navigation Links (Editorial Swiss Grid) */}
+              {/* Center Navigation Links */}
               <StaggerItem visible={s1Visible} delay={30} className="hidden md:block">
-                <nav className="flex items-center gap-8 text-[13px] font-geist font-medium text-[#5E5E5E] pointer-events-auto">
+                <nav className="flex items-center gap-8 text-[13px] font-geist font-medium text-[#4A4A4A] pointer-events-auto">
                   <a href="#services" className="hover:text-black transition-colors">Services</a>
                   <a href="#projects" className="hover:text-black transition-colors">Work</a>
                   <a href="#about" className="hover:text-black transition-colors">About</a>
@@ -185,11 +185,11 @@ export default function CloudVideoScrubSection() {
                 </nav>
               </StaggerItem>
 
-              {/* Superdesign Nav CTA Button (Smaller Black Pill ~40px Height) */}
+              {/* Nav CTA Button */}
               <StaggerItem visible={s1Visible} delay={60}>
                 <a
                   href="#contact"
-                  className="pointer-events-auto inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-black text-white text-xs font-geist font-medium hover:bg-neutral-800 transition-all shadow-xs cursor-pointer group"
+                  className="pointer-events-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black text-white text-xs font-geist font-medium hover:bg-neutral-800 transition-all shadow-xs cursor-pointer group"
                 >
                   <span>Start a Project</span>
                   <ArrowUpRight size={13} className="text-neutral-400 group-hover:text-white transition-colors" />
@@ -197,175 +197,216 @@ export default function CloudVideoScrubSection() {
               </StaggerItem>
             </div>
 
-            {/* Subtle Depth Watermark Floating in Deep Z-Space Behind */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center pointer-events-none z-0 opacity-[0.03] select-none">
-              <span className="text-[70px] sm:text-[130px] md:text-[170px] lg:text-[210px] font-geist font-bold tracking-[-0.04em] uppercase whitespace-nowrap text-black block">
-                GREFFON
-              </span>
-            </div>
-
-            {/* Center Stage: /superdesign Editorial Typography & CTA Cluster */}
-            <div className="max-w-[1080px] w-full text-center my-auto relative z-10 flex flex-col items-center pt-2 pb-4">
+            {/* Main Left-Aligned Hero Content */}
+            <div className="w-full max-w-[1440px] mx-auto my-auto relative z-10 flex items-center justify-between pt-2 pb-4">
               
+              {/* Left Column: Eyebrow + Headline + Subtext + CTA/Trust + Logos */}
+              <div className="max-w-[720px] w-full text-left flex flex-col items-start">
+                
+                {/* Eyebrow / Tagline */}
+                <StaggerItem visible={s1Visible} delay={90}>
+                  <div className="flex items-center gap-3 mb-4 sm:mb-5">
+                    <span className="w-8 sm:w-10 h-[1.5px] bg-neutral-400 inline-block" />
+                    <span className="text-[10.5px] sm:text-[11.5px] font-geist font-semibold tracking-[0.18em] text-[#6E6E6E] uppercase">
+                      Digital Experiences For Ambitious Brands
+                    </span>
+                  </div>
+                </StaggerItem>
 
-              {/* /superdesign Display Headline */}
-              <StaggerItem visible={s1Visible} delay={140}>
-                <h1 className="text-[42px] sm:text-[62px] md:text-[74px] lg:text-[82px] font-geist font-normal text-black tracking-[-2px] sm:tracking-[-3.4px] leading-[1.08] mb-5 sm:mb-6 text-center">
-                  Websites That Turn <br className="hidden sm:inline" />
-                  Visitors Into <span className="font-serif-italic font-normal tracking-normal text-[1.14em] text-neutral-900 inline-block px-1">Clients.</span>
-                </h1>
-              </StaggerItem>
+                {/* Display Headline */}
+                <StaggerItem visible={s1Visible} delay={140}>
+                  <h1 className="text-[44px] sm:text-[64px] md:text-[76px] lg:text-[88px] font-geist font-normal text-[#0F1115] tracking-[-0.035em] leading-[1.04] mb-5 sm:mb-6 text-left">
+                    Websites That Turn <br />
+                    Visitors Into <span className="font-serif-italic font-normal italic tracking-tight text-[1.14em] text-[#111] inline-block px-1">Clients.</span>
+                  </h1>
+                </StaggerItem>
 
-              {/* Sub-headline Narrative */}
-              <StaggerItem visible={s1Visible} delay={190}>
-                <p className="max-w-xl mx-auto text-sm sm:text-base md:text-[17px] text-[#5E5E5E] font-geist font-normal leading-[1.6] mb-8 sm:mb-9 px-4">
-                  We build high-converting websites and digital experiences that establish instant trust and grow your revenue on autopilot.
-                </p>
-              </StaggerItem>
+                {/* Sub-headline Narrative */}
+                <StaggerItem visible={s1Visible} delay={190}>
+                  <p className="max-w-[540px] text-sm sm:text-base md:text-[16.5px] text-[#555] font-geist font-normal leading-[1.58] mb-7 sm:mb-8 text-left">
+                    We build high-converting websites and digital experiences that establish instant trust and grow your revenue on autopilot.
+                  </p>
+                </StaggerItem>
 
-              {/* Primary Pill Button + Stacked-Avatar Trust Cluster */}
-              <StaggerItem visible={s1Visible} delay={240}>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-7 pointer-events-auto mb-6 sm:mb-8">
-                  
-                  {/* Primary & Secondary Pill Buttons */}
-                  <div className="flex items-center gap-3">
+                {/* CTA Buttons & Social Proof Cluster */}
+                <StaggerItem visible={s1Visible} delay={240}>
+                  <div className="flex flex-wrap items-center gap-4 sm:gap-6 pointer-events-auto mb-10 sm:mb-12">
+                    
+                    {/* Primary Button */}
                     <a
                       href="#contact"
-                      className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3 rounded-full bg-black text-white text-xs sm:text-sm font-geist font-medium hover:bg-neutral-800 transition-all shadow-[0_12px_24px_-8px_rgba(0,0,0,0.35)] hover:scale-[1.02] cursor-pointer group"
+                      className="inline-flex items-center gap-2.5 px-6 sm:px-7 py-3.5 rounded-full bg-black text-white text-xs sm:text-sm font-geist font-medium hover:bg-neutral-800 transition-all shadow-[0_12px_24px_-8px_rgba(0,0,0,0.35)] hover:scale-[1.02] cursor-pointer group"
                     >
                       <span>Get More Clients</span>
                       <ArrowUpRight size={13} className="text-neutral-400 group-hover:text-white transition-colors" />
                     </a>
 
+                    {/* Secondary Button */}
                     <a
                       href="#projects"
-                      className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 rounded-full bg-white/90 backdrop-blur-md border border-[#D6D6D6] text-black text-xs sm:text-sm font-geist font-medium hover:bg-white hover:border-neutral-400 transition-all shadow-xs hover:scale-[1.02] cursor-pointer"
+                      className="inline-flex items-center gap-3 px-5 sm:px-6 py-3 rounded-full bg-white/90 backdrop-blur-md border border-[#D6D6D6] text-black text-xs sm:text-sm font-geist font-medium hover:bg-white hover:border-neutral-400 transition-all shadow-xs hover:scale-[1.02] cursor-pointer group"
                     >
                       <span>See Our Results</span>
-                      <ArrowUpRight size={13} className="text-neutral-500" />
-                    </a>
-                  </div>
-
-                  {/* Vertical Hairline Divider */}
-                  <div className="hidden sm:block w-px h-8 bg-[#D6D6D6]" />
-
-                  {/* Stacked-Avatar Trust Cluster (from design.md lines 124 & 143) */}
-                  <div className="flex items-center gap-3">
-                    <div className="flex -space-x-2">
-                      <img
-                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-xs"
-                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop"
-                        alt="Client 1"
-                      />
-                      <img
-                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-xs"
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
-                        alt="Client 2"
-                      />
-                      <img
-                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-xs"
-                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop"
-                        alt="Client 3"
-                      />
-                      <img
-                        className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-xs"
-                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
-                        alt="Client 4"
-                      />
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white bg-black text-white flex items-center justify-center text-[10px] font-inter font-bold shadow-xs">
-                        +40
-                      </div>
-                    </div>
-                    <div className="flex flex-col text-left">
-                      <div className="flex items-center gap-1 text-[#E0A533]">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} size={11} fill="#E0A533" strokeWidth={0} />
-                        ))}
-                        <span className="text-[11.5px] font-inter font-bold text-black ml-1">5.0</span>
-                      </div>
-                      <span className="text-[11px] font-inter font-bold text-[#5E5E5E]">
-                        Trusted by founders
+                      <span className="w-5 h-5 rounded-full bg-neutral-100 flex items-center justify-center text-neutral-800 group-hover:bg-black group-hover:text-white transition-colors">
+                        <svg className="w-2.5 h-2.5 fill-current ml-0.5" viewBox="0 0 24 24">
+                          <polygon points="5 3 19 12 5 21 5 3" />
+                        </svg>
                       </span>
+                    </a>
+
+                    {/* Stacked-Avatar Trust Cluster */}
+                    <div className="flex items-center gap-3 pl-1">
+                      <div className="flex -space-x-2">
+                        <img
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                          src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop"
+                          alt="Founder 1"
+                        />
+                        <img
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+                          alt="Founder 2"
+                        />
+                        <img
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop"
+                          alt="Founder 3"
+                        />
+                        <img
+                          className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white object-cover shadow-xs"
+                          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
+                          alt="Founder 4"
+                        />
+                        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 border-white bg-black text-white flex items-center justify-center text-[10px] font-inter font-bold shadow-xs">
+                          +40
+                        </div>
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <div className="flex items-center gap-1 text-[#E0A533]">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} size={11} fill="#E0A533" strokeWidth={0} />
+                          ))}
+                          <span className="text-[12px] font-inter font-bold text-black ml-1">5.0</span>
+                        </div>
+                        <span className="text-[11px] font-inter font-medium text-[#6E6E6E]">
+                          Trusted by founders
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </StaggerItem>
+
+                {/* Partner Brand Logos Section */}
+                <StaggerItem visible={s1Visible} delay={290}>
+                  <div className="flex flex-col items-start gap-3">
+                    <span className="text-[10px] sm:text-[10.5px] font-geist font-semibold tracking-[0.18em] text-[#7A7A7A] uppercase">
+                      Trusted by innovative companies
+                    </span>
+                    <div className="flex flex-wrap items-center gap-6 sm:gap-8 opacity-75 hover:opacity-100 transition-opacity pointer-events-auto pt-1">
+                      
+                      {/* Notion */}
+                      <div className="flex items-center gap-1.5 text-neutral-800 font-semibold text-[13px] tracking-tight">
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M4.459 4.206a2.02 2.02 0 0 1 1.637-.841l12.593-.004a1.8 1.8 0 0 1 1.795 1.802v13.674a2.02 2.02 0 0 1-1.637.841L6.254 19.682a1.8 1.8 0 0 1-1.795-1.802V4.206Zm2.404 1.792v11.838l10.02.003V5.998H6.863Zm2.25 2.11h1.86v1.44h.04c.34-.84 1.25-1.55 2.5-1.55 1.65 0 2.9 1.15 2.9 3.25v4.54h-1.87v-4.14c0-1.15-.55-1.76-1.5-1.76-.98 0-1.77.7-1.77 2.01v3.89h-1.86V8.108h-.3Z"/>
+                        </svg>
+                        <span>Notion</span>
+                      </div>
+
+                      {/* Stripe */}
+                      <div className="flex items-center text-neutral-800 font-bold text-[14px] tracking-tight">
+                        <span>stripe</span>
+                      </div>
+
+                      {/* Spotify */}
+                      <div className="flex items-center gap-1.5 text-neutral-800 font-semibold text-[13px] tracking-tight">
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 2C6.477 2 2 6.477 2 12c0 5.524 4.477 10 10 10s10-4.476 10-10c0-5.523-4.477-10-10-10zm4.587 14.429c-.18.295-.563.387-.857.208-2.348-1.435-5.304-1.76-8.785-.964-.334.077-.665-.133-.742-.467-.077-.334.133-.665.467-.742 3.808-.871 7.077-.497 9.709 1.108.294.18.387.563.208.857zm1.225-2.724c-.227.368-.71.485-1.077.259-2.688-1.653-6.786-2.132-9.965-1.166-.413.125-.851-.107-.977-.52-.125-.413.107-.852.52-.977 3.632-1.103 8.147-.568 11.24 1.332.368.226.485.71.259 1.077zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71c-.494.15-1.018-.129-1.167-.624-.15-.494.129-1.018.624-1.167 3.532-1.072 9.404-.87 13.14 1.349.444.263.589.84.325 1.284-.263.444-.84.589-1.284.325z" />
+                        </svg>
+                        <span>Spotify</span>
+                      </div>
+
+                      {/* Figma */}
+                      <div className="flex items-center gap-1.5 text-neutral-800 font-semibold text-[13px] tracking-tight">
+                        <svg className="w-3.5 h-4" viewBox="0 0 38 57" fill="currentColor">
+                          <path d="M19 28.5A9.5 9.5 0 1 1 28.5 19 9.5 9.5 0 0 1 19 28.5ZM0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0ZM0 9.5A9.5 9.5 0 0 1 9.5 0H19v19H9.5A9.5 9.5 0 0 1 0 9.5ZM0 28.5A9.5 9.5 0 0 1 9.5 19H19v19H9.5A9.5 9.5 0 0 1 0 28.5ZM19 0h9.5a9.5 9.5 0 0 1 0 19H19V0Z"/>
+                        </svg>
+                        <span>Figma</span>
+                      </div>
+
+                      {/* Linear */}
+                      <div className="flex items-center gap-1.5 text-neutral-800 font-semibold text-[13px] tracking-tight">
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M2.5 18.5a9.96 9.96 0 0 1-.5-3.14C2 9.75 6.75 5 12.61 5c1.09 0 2.14.17 3.14.5L2.5 18.5Zm2.86 2.86L18.5 8.22c.33 1 .5 2.05.5 3.14 0 5.86-4.75 10.61-10.61 10.61-1.09 0-2.14-.17-3.03-.61Z"/>
+                        </svg>
+                        <span>Linear</span>
+                      </div>
+
+                      {/* Webflow */}
+                      <div className="flex items-center gap-1.5 text-neutral-800 font-semibold text-[13px] tracking-tight">
+                        <svg className="w-4 h-3.5" viewBox="0 0 88 56" fill="currentColor">
+                          <path d="M87.5 0L60.3 56H41.6L52.8 33.3H52.2L39.7 56H21L33.7 32.8H33.1L18.7 56H0L24.6 15.6H41.7L31.3 32.6H31.9L44.7 15.6H61.8L51.4 32.6H52L64.8 15.6H81.9L71.5 32.6H72.1L87.5 0Z"/>
+                        </svg>
+                        <span>Webflow</span>
+                      </div>
+
                     </div>
                   </div>
+                </StaggerItem>
 
-                </div>
-              </StaggerItem>
+              </div>
 
-              {/* Nanum Pen Script Hand-drawn Micro Accent */}
-              <StaggerItem visible={s1Visible} delay={280}>
-                <div className="inline-flex items-center gap-2 text-neutral-600 select-none mb-3">
-                  <span className="font-script text-[20px] sm:text-[22px] rotate-[-2deg]">
-                    scroll to explore the clouds & manifesto
-                  </span>
-                  <svg
-                    className="w-3.5 h-3.5 text-neutral-500 animate-bounce"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="M12 5v14M19 12l-7 7-7-7" />
-                  </svg>
-                </div>
-              </StaggerItem>
+              {/* Right Mountain Handwritten Annotation */}
+              <div className="hidden lg:flex flex-col items-start relative select-none mr-8 mb-20 pointer-events-none">
+                <StaggerItem visible={s1Visible} delay={350}>
+                  <div className="relative">
+                    {/* Handwritten curved arrow SVG */}
+                    <svg
+                      className="w-10 h-10 text-neutral-600 -rotate-12 absolute -left-10 top-1"
+                      viewBox="0 0 40 40"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M32 30 C 26 20, 16 10, 6 12" />
+                      <path d="M6 12 L 12 8" />
+                      <path d="M6 12 L 12 16" />
+                    </svg>
 
-              {/* Partner Brand Logos Strip */}
-              <StaggerItem visible={s1Visible} delay={300}>
-                <div className="flex items-center justify-center gap-7 sm:gap-11 opacity-60 hover:opacity-90 transition-opacity pointer-events-auto">
-                  <div className="flex items-center gap-2 text-black font-semibold text-xs tracking-tight">
-                    <svg className="w-5 h-5" viewBox="0 0 30 31" fill="none">
-                      <rect x="2" y="2.5" width="26" height="26" rx="4" stroke="currentColor" strokeWidth="2.5" />
-                      <circle cx="19.5" cy="10.5" r="2.8" fill="currentColor" />
-                    </svg>
-                    <span>logoipsum</span>
+                    <div className="font-script text-[#4A4A4A] text-[20px] sm:text-[22px] leading-[1.1] rotate-[-4deg] pl-2">
+                      <span>Higher</span><br />
+                      <span>Conversions</span><br />
+                      <span>Happier Clients</span>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2 text-black font-semibold text-xs tracking-tight">
-                    <svg className="w-4 h-5" viewBox="0 0 25 30" fill="none">
-                      <rect x="1.5" y="2" width="7" height="26" rx="3.5" fill="currentColor" />
-                      <path d="M12.5 15C12.5 8.37 17.87 3 24.5 3V27C17.87 27 12.5 21.63 12.5 15Z" fill="currentColor" />
-                    </svg>
-                    <span>logoipsum</span>
-                  </div>
-                  <div className="hidden sm:flex items-center gap-2 text-black font-semibold text-xs tracking-tight">
-                    <svg className="w-5 h-5" viewBox="0 0 28 28" fill="none">
-                      <circle cx="14" cy="14" r="11" stroke="currentColor" strokeWidth="2.5" />
-                      <path d="M7 14C7 10.13 10.13 7 14 7C17.87 7 21 10.13 21 14" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                    </svg>
-                    <span>logoipsum</span>
-                  </div>
-                  <div className="hidden md:flex items-center gap-2 text-black font-semibold text-xs tracking-tight">
-                    <svg className="w-5 h-5" viewBox="0 0 28 25.5" fill="none">
-                      <path d="M2 10.5C6 4 10 4 14 10.5C18 17 22 17 26 10.5V5.5C22 12 18 12 14 5.5C10 -1 6 -1 2 5.5V10.5Z" fill="currentColor" />
-                      <path d="M2 17.5C6 11 10 11 14 17.5C18 24 22 24 26 17.5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
-                    </svg>
-                    <span>logoipsum</span>
-                  </div>
-                </div>
-              </StaggerItem>
+                </StaggerItem>
+              </div>
 
             </div>
 
-            {/* Bottom Metadata & Carousel Bar */}
-            <div className="w-full max-w-[1360px] flex items-center justify-between text-xs relative z-20 pt-2">
+            {/* Bottom Metadata Bar */}
+            <div className="w-full max-w-[1440px] mx-auto flex items-center justify-between text-xs relative z-20 pt-2">
               <StaggerItem visible={s1Visible} delay={320}>
                 <div className="flex items-center gap-3">
-                  <span className="text-[11px] font-inter font-bold tracking-[0.2em] text-[#5E5E5E] uppercase">
-                    01 / 03 · CLOUD ASCENT
+                  <span className="text-[11.5px] font-geist font-semibold tracking-wider text-black">
+                    01 / 03
                   </span>
-                  <span className="hidden sm:inline-block w-8 h-px bg-[#D6D6D6]" />
-                  <span className="hidden sm:inline-block text-[11px] font-geist text-neutral-400">
-                    Interactive Canvas Scrubbing
+                  <span className="w-8 sm:w-12 h-[1px] bg-neutral-400" />
+                  <span className="text-[11.5px] font-geist font-bold tracking-wider text-black uppercase">
+                    CLOUD ASCENT
+                  </span>
+                  <span className="text-[12.5px] font-serif-italic italic text-neutral-600 ml-2">
+                    Ideas. Design. Growth.
                   </span>
                 </div>
               </StaggerItem>
 
               <StaggerItem visible={s1Visible} delay={360}>
                 <div className="flex items-center gap-3 pointer-events-auto">
-                  <span className="hidden sm:inline-block font-script text-xl text-neutral-500">
-                    read manifesto ↴
+                  <span className="text-[10.5px] font-geist font-semibold tracking-[0.18em] text-[#555] uppercase">
+                    SCROLL TO EXPLORE
                   </span>
                   <button
                     onClick={() => {
@@ -374,10 +415,10 @@ export default function CloudVideoScrubSection() {
                         window.scrollTo({ top: targetOffset, behavior: 'smooth' });
                       }
                     }}
-                    aria-label="Scroll to manifesto"
-                    className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-md border border-[#D6D6D6] text-black hover:bg-black hover:text-white transition-all flex items-center justify-center shadow-xs cursor-pointer hover:scale-105"
+                    aria-label="Scroll to explore"
+                    className="w-8 h-8 rounded-full bg-white text-black hover:bg-black hover:text-white transition-all flex items-center justify-center shadow-md cursor-pointer hover:scale-105"
                   >
-                    <ArrowDown size={13} />
+                    <ArrowDown size={14} />
                   </button>
                 </div>
               </StaggerItem>
