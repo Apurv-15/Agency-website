@@ -8,146 +8,140 @@ interface PerspectiveTextRevealProps {
   text?: string;
   className?: string;
   containerClassName?: string;
-  startTrigger?: string;
-  endTrigger?: string;
-  scrubSpeed?: number | boolean;
-  perspective?: number;
-  initialRotateX?: number;
 }
 
 /**
  * PerspectiveTextReveal Component
- * Recreates the iconic 3D perspective smooth character/word scroll illumination effect
- * matching design.md editorial dark aesthetic (Geist/Neue Montreal typography, 3D pitch, silky opacity transition).
+ * Pinned viewport scroll reveal: Locks the section in center screen while the user scrolls,
+ * smoothly illuminating all words/characters to 100% white before unpinning.
  */
 export default function PerspectiveTextReveal({
   text = "Building products that customers love isn’t magic, it requires:",
   className = "",
   containerClassName = "",
-  startTrigger = "top 75%",
-  endTrigger = "bottom 35%",
-  scrubSpeed = 1,
-  perspective = 1100,
-  initialRotateX = 28,
 }: PerspectiveTextRevealProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const pinTrackRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    if (!headingRef.current || !containerRef.current) return;
+    if (!headingRef.current || !pinTrackRef.current || !stageRef.current) return;
 
     const chars = headingRef.current.querySelectorAll(".char-span");
     if (!chars.length) return;
 
-    // Reset initial state
+    // Initial state: dim characters with 3D perspective tilt
     gsap.set(chars, {
-      opacity: 0.2,
-      color: "rgba(242, 239, 232, 0.2)",
+      opacity: 0.15,
+      color: "rgba(255, 255, 255, 0.15)",
     });
 
     gsap.set(headingRef.current, {
-      rotateX: initialRotateX,
-      translateY: -10,
-      translateZ: 30,
-      transformPerspective: perspective,
+      rotateX: 24,
+      translateY: 10,
+      transformPerspective: 1100,
       transformOrigin: "center center",
       backfaceVisibility: "hidden",
     });
 
-    // Timeline linked to ScrollTrigger with smooth scrub
+    // Pinned ScrollTrigger: Locks stage in viewport for 120vh of scroll distance
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: containerRef.current,
-        start: startTrigger,
-        end: endTrigger,
-        scrub: scrubSpeed,
-        // markers: false,
+        trigger: pinTrackRef.current,
+        start: "top top",
+        end: "+=120%",
+        pin: stageRef.current,
+        scrub: 0.8,
+        anticipatePin: 1,
       },
     });
 
-    // Smooth staggered opacity illumination
+    // Animate characters from 0.15 opacity to 1.0 bright white
     tl.to(chars, {
       opacity: 1,
-      color: "#f2efe8",
+      color: "#FFFFFF",
       stagger: {
-        each: 0.03,
+        each: 0.04,
         from: "start",
         ease: "power2.out",
       },
-      duration: 1,
+      duration: 1.2,
     });
 
-    // Subtle leveling of 3D tilt as user progresses
+    // Smoothly level 3D perspective as text illuminates
     tl.to(
       headingRef.current,
       {
-        rotateX: Math.max(0, initialRotateX - 18),
+        rotateX: 0,
         translateY: 0,
-        translateZ: 0,
         ease: "power1.out",
-        duration: 1,
+        duration: 1.2,
       },
       0
     );
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => {
-        if (trigger.vars.trigger === containerRef.current) {
+        if (trigger.vars.trigger === pinTrackRef.current) {
           trigger.kill();
         }
       });
     };
-  }, [initialRotateX, perspective, scrubSpeed, startTrigger, endTrigger]);
+  }, []);
 
-  // Break text into words, and words into characters to ensure proper wrapping
   const words = text.split(" ");
 
   return (
-    <section
-      id="perspective-intro"
-      ref={containerRef}
-      className={`relative w-full min-h-screen sm:min-h-[115vh] bg-black text-white py-36 sm:py-52 md:py-64 px-6 sm:px-10 md:px-16 flex items-center justify-center overflow-hidden [perspective:1100px] select-none ${containerClassName}`}
-      style={{
-        perspective: `${perspective}px`,
-        perspectiveOrigin: "50% 50%",
-      }}
+    <div
+      id="perspective-scroll-track"
+      ref={pinTrackRef}
+      className={`relative w-full h-[220vh] bg-black ${containerClassName}`}
     >
-      {/* Background ambient dark radial glow */}
-      <div className="absolute inset-0 pointer-events-none radial-dot-pattern opacity-10" />
-      <div className="absolute w-[500px] h-[300px] bg-neutral-900/40 rounded-full blur-3xl pointer-events-none -top-10 left-1/2 -translate-x-1/2" />
-
-      <h2
-        ref={headingRef}
-        aria-label={text}
-        className={`relative z-10 text-[#f2efe8] leading-[1.08] font-geist font-normal text-3xl sm:text-5xl md:text-[62px] lg:text-[70px] tracking-[-0.035em] text-center max-w-[820px] mx-auto my-0 will-change-transform ${className}`}
+      {/* Pinned Stage that stays centered in viewport during scroll */}
+      <div
+        ref={stageRef}
+        className="w-full h-screen flex items-center justify-center overflow-hidden px-6 sm:px-10 md:px-16 select-none"
         style={{
-          fontFamily: "'Geist', 'Neue Montreal', 'Helvetica Neue', sans-serif",
-          textWrap: "balance",
-          transformStyle: "preserve-3d",
+          perspective: "1100px",
+          perspectiveOrigin: "50% 50%",
         }}
       >
-        {words.map((word, wordIdx) => (
-          <span
-            key={`word-${wordIdx}`}
-            className="inline-block whitespace-nowrap mr-[0.28em] last:mr-0"
-            aria-hidden="true"
-          >
-            {word.split("").map((char, charIdx) => (
-              <span
-                key={`char-${wordIdx}-${charIdx}`}
-                className="char-span inline-block transition-colors duration-200"
-                style={{
-                  opacity: 0.2,
-                  color: "rgba(242, 239, 232, 0.2)",
-                  willChange: "opacity, color",
-                }}
-              >
-                {char}
-              </span>
-            ))}
-          </span>
-        ))}
-      </h2>
-    </section>
+        {/* Subtle dark ambient glow */}
+        <div className="absolute w-[600px] h-[350px] bg-neutral-900/30 rounded-full blur-[120px] pointer-events-none" />
+
+        <h2
+          ref={headingRef}
+          aria-label={text}
+          className={`relative z-10 text-white leading-[1.08] font-geist font-normal text-3xl sm:text-5xl md:text-[64px] lg:text-[76px] tracking-[-0.035em] text-center max-w-[860px] mx-auto my-0 will-change-transform ${className}`}
+          style={{
+            fontFamily: "'Geist', 'Inter', -apple-system, sans-serif",
+            textWrap: "balance",
+            transformStyle: "preserve-3d",
+          }}
+        >
+          {words.map((word, wordIdx) => (
+            <span
+              key={`word-${wordIdx}`}
+              className="inline-block whitespace-nowrap mr-[0.28em] last:mr-0"
+              aria-hidden="true"
+            >
+              {word.split("").map((char, charIdx) => (
+                <span
+                  key={`char-${wordIdx}-${charIdx}`}
+                  className="char-span inline-block transition-colors duration-150"
+                  style={{
+                    opacity: 0.15,
+                    color: "rgba(255, 255, 255, 0.15)",
+                    willChange: "opacity, color",
+                  }}
+                >
+                  {char}
+                </span>
+              ))}
+            </span>
+          ))}
+        </h2>
+      </div>
+    </div>
   );
 }
