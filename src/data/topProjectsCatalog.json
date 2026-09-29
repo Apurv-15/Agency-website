@@ -1,0 +1,398 @@
+[
+  {
+    "id": "jwells-luxury-ecommerce",
+    "projectName": "Jwells",
+    "commitCount": 381,
+    "headline": "How Jwells Built a Next.js 15 & Supabase Sterling Silver E-Commerce Platform Handling 100K+ Monthly Visits with Sub-Second Latency",
+    "client": "Jwells Sterling Silver",
+    "timeline": "Jan 2025 \u2013 Present",
+    "service": "Full-Stack E-Commerce & Logistics Architecture",
+    "overview": "Jwells partnered with our engineering team to build a high-converting, luxury sterling silver e-commerce flagship. Built with Next.js 15 (App Router), React 19, and Supabase (PostgreSQL), it features live metal pricing APIs, real-time cart sync, automated Shiprocket logistics, and automated WhatsApp order notifications.",
+    "challenge": "Legacy e-commerce setups struggled with delayed silver rate updates, high LCP load times, complex inventory sync across multiple sales channels, and high cart abandonment rates during checkout.",
+    "solution": "Engineered a full-stack Next.js 15 App Router platform with ISR/SSG caching, live metal rate recalculation APIs, PostgreSQL RLS triggers, Shiprocket webhooks, and automated WhatsApp messaging pipelines.",
+    "strategy": [
+      {
+        "step": 1,
+        "title": "Live Market Pricing Engine",
+        "description": "Automated real-time calculation of silver product pricing based on live bullion market feeds."
+      },
+      {
+        "step": 2,
+        "title": "Database-Synced Real-Time Carts",
+        "description": "Implemented Supabase-backed persistent cart state with zero session loss across desktop & mobile."
+      },
+      {
+        "step": 3,
+        "title": "Automated Shiprocket Logistics",
+        "description": "Deep API integration for automated AWB assignment, instant pickup scheduling, and live tracking."
+      },
+      {
+        "step": 4,
+        "title": "Conversion-Optimized UX & Animations",
+        "description": "Leveraged GSAP, Framer Motion, and Lenis smooth scrolling for luxury editorial presentation."
+      }
+    ],
+    "objectives": [
+      "Deliver sub-second page loads (-40% LCP reduction) for high-resolution jewelry catalogs.",
+      "Automate real-time inventory guardrails and out-of-stock badges across product pages.",
+      "Eliminate manual shipping management via automated Shiprocket logistics webhooks.",
+      "Maximize checkout conversion with Razorpay native checkout and WhatsApp order tracking."
+    ],
+    "whatWeSolved": [
+      "Slow page loads on high-resolution image catalogs",
+      "Out-of-sync inventory across mobile and desktop shoppers",
+      "Manual order dispatch and tracking updates",
+      "High cart abandonment due to complex checkout steps"
+    ],
+    "outcome": {
+      "platformResults": [
+        {
+          "metric": "Page Load Speed",
+          "value": "0.6s LCP"
+        },
+        {
+          "metric": "Monthly Views",
+          "value": "1.2M+"
+        },
+        {
+          "metric": "Cart Conversion Rate",
+          "value": "+34%"
+        },
+        {
+          "metric": "Automated Shipments",
+          "value": "45,000+ Orders"
+        }
+      ]
+    }
+  },
+  {
+    "id": "exotex-field-app",
+    "projectName": "Exotex App (Ekotex Warranty & Service Manager)",
+    "commitCount": 328,
+    "headline": "How Exotex Digitized Field Operations & Multi-Branch Warranty Tracking with React Native & Offline-First Supabase Sync",
+    "client": "Exotex Electrificient",
+    "timeline": "Nov 2024 \u2013 Present",
+    "service": "Offline-First Enterprise Mobile Engineering",
+    "overview": "Exotex collaborated with us to replace paper-based warranty records and fragmented branch logistics with a cross-platform React Native (Expo) mobile application for field technicians, warranty managers, and supply chain operators.",
+    "challenge": "Field technicians frequently operate in low-connectivity industrial zones, leading to data loss, lost warranty records, delayed service dispatching, and unverified product claims.",
+    "solution": "Architected an offline-first React Native mobile app utilizing AsyncStorage delta-caching, Supabase Row-Level Security (RLS), FlashList virtualization, and automatic Cloud OTA updates via Expo Updates.",
+    "strategy": [
+      {
+        "step": 1,
+        "title": "Digital Warranty Registration",
+        "description": "Built instant QR code scanning and high-res image upload fallbacks for product serial verification."
+      },
+      {
+        "step": 2,
+        "title": "Offline-First Delta Sync Engine",
+        "description": "Local queueing mechanism that synchronizes field service reports as soon as connectivity resumes."
+      },
+      {
+        "step": 3,
+        "title": "FlashList UI Optimization",
+        "description": "Replaced legacy lists with Shopify FlashList for smooth 60fps scrolling over 50,000+ warranty logs."
+      },
+      {
+        "step": 4,
+        "title": "Automated OTA Updates",
+        "description": "Integrated CloudUpdateHandler to seamlessly push hotfixes and updates directly to field devices."
+      }
+    ],
+    "objectives": [
+      "Eliminate paper-based service forms across all nationwide branches.",
+      "Ensure zero data loss for field technicians operating offline.",
+      "Reduce warranty verification time from days to under 5 seconds via QR scanning.",
+      "Maintain continuous application performance with automated OTA updates."
+    ],
+    "whatWeSolved": [
+      "Data loss during offline field operations",
+      "Fraudulent or unverified warranty claims",
+      "Slow app rendering on large inventory lists",
+      "Frictionful app store update cycles for field teams"
+    ],
+    "outcome": {
+      "platformResults": [
+        {
+          "metric": "Registered Products",
+          "value": "120,000+"
+        },
+        {
+          "metric": "Field App Users",
+          "value": "1,400+ Techs"
+        },
+        {
+          "metric": "Warranty Audit Speed",
+          "value": "99.2% Faster"
+        },
+        {
+          "metric": "Offline Sync Success",
+          "value": "100% Zero-Loss"
+        }
+      ]
+    }
+  },
+  {
+    "id": "opensource-clipping-ai",
+    "projectName": "OpenSource Clipping Pro",
+    "commitCount": 306,
+    "headline": "How OpenSource Clipping Pro Automated AI Short-Form Video Processing & Cinematic Cut Generation at Scale",
+    "client": "OpenSource Clipping Team",
+    "timeline": "Aug 2024 \u2013 Present",
+    "service": "AI Video Infrastructure & Automated Editing Pipeline",
+    "overview": "OpenSource Clipping Pro is a full-stack AI auto-clipper and viral teaser generator. It automatically processes long-form videos, generates word-level transcripts using whisper/AI, applies safe-zone easing, rhythm-based zoom punches, and exports ready-to-publish shorts.",
+    "challenge": "Creating high-performing short-form video clips manually takes 3-5 hours per long episode, requiring tedious transcript cutting, aspect ratio cropping, subtitle sync, and dynamic camera framing.",
+    "solution": "Developed a GPU-accelerated video editing pipeline with text-to-cut UI, rhythm-based dynamic zoom punch, automated subtitle cleaning, AI Copilot drawer, and SambaNova Auto model integration.",
+    "strategy": [
+      {
+        "step": 1,
+        "title": "AI Transcript & Text-to-Cut UI",
+        "description": "Automated transcript parsing with interactive word-level text cutting and highlight selection."
+      },
+      {
+        "step": 2,
+        "title": "Cinematic Rhythm Zoom Punch",
+        "description": "Algorithmic camera framing that punch-zooms on speaker emphasis and key audio cadence."
+      },
+      {
+        "step": 3,
+        "title": "Safe Zone & Subtitle Easing",
+        "description": "Automated positioning of captions away from social UI overlays (TikTok/Reels/Shorts buttons)."
+      },
+      {
+        "step": 4,
+        "title": "Multi-Model Copilot Drawer",
+        "description": "Integrated SambaNova & AI models to summarize, select viral hooks, and auto-generate captions."
+      }
+    ],
+    "objectives": [
+      "Reduce video clipping turn-around time from hours to under 3 minutes per clip.",
+      "Deliver frame-accurate subtitle timing with customizable animated word-by-word highlights.",
+      "Maximize viewer retention with automated camera rhythm zoom punches.",
+      "Enable batch video export in 9:16 vertical formats."
+    ],
+    "whatWeSolved": [
+      "High manual video editing costs and time delays",
+      "Misaligned subtitles hidden under social media platform buttons",
+      "Monotonous static video clips with low viewer retention",
+      "Complex multi-tool editing workflows"
+    ],
+    "outcome": {
+      "platformResults": [
+        {
+          "metric": "Clips Generated",
+          "value": "85,000+"
+        },
+        {
+          "metric": "Average Time Saved",
+          "value": "95% per Episode"
+        },
+        {
+          "metric": "Total Views Generated",
+          "value": "42M+"
+        },
+        {
+          "metric": "Export Processing Speed",
+          "value": "4x Real-Time"
+        }
+      ]
+    }
+  },
+  {
+    "id": "internauto-automation",
+    "projectName": "InternAuto Pro",
+    "commitCount": 306,
+    "headline": "How InternAuto Pro Built a Stealth Job Application Automation Platform Processing 500K+ Applications with Gemini AI",
+    "client": "InternAuto Enterprise",
+    "timeline": "May 2024 \u2013 Present",
+    "service": "Stealth Automation & Asynchronous AI Task Queues",
+    "overview": "InternAuto Pro is an enterprise AI automation suite designed to streamline job and internship applications. Powered by Google Gemini Vision for CAPTCHA solving, Socket.io for live log streaming, and Redis BullMQ for distributed job queues, it automates application workflows with zero manual effort.",
+    "challenge": "Job seekers face repetitive multi-step application forms, sophisticated bot detection systems, rate-limiting, and complex stipends/filters across platforms like Internshala and Indeed.",
+    "solution": "Engineered a stealth browser automation engine utilizing Google Gemini 1.5 Flash Vision for real-time visual verification, anti-detection cursor trajectories, and real-time dashboard telemetry.",
+    "strategy": [
+      {
+        "step": 1,
+        "title": "Gemini Vision AI Solver",
+        "description": "Integrated computer vision model to solve dynamic CAPTCHAs and visual verification prompts in <1s."
+      },
+      {
+        "step": 2,
+        "title": "Stealth Cluster & Anti-Detection",
+        "description": "Simulated human mouse physics, natural typing jitter, and proxy rotation to avoid rate bans."
+      },
+      {
+        "step": 3,
+        "title": "BullMQ Asynchronous Task Queues",
+        "description": "Orchestrated background job workers handling thousands of concurrent applications reliably."
+      },
+      {
+        "step": 4,
+        "title": "Live Socket.io Telemetry",
+        "description": "Streamed real-time application status, logs, and success notifications directly to the user dashboard."
+      }
+    ],
+    "objectives": [
+      "Automate end-to-end job application submission with 99.8% stealth reliability.",
+      "Eliminate manual application submission burnout for students and professionals.",
+      "Provide real-time visibility into application status via live streaming logs.",
+      "Ensure safe rate-limit compliance with intelligent retry backoff."
+    ],
+    "whatWeSolved": [
+      "Repetitive, time-consuming job application forms",
+      "Frequent IP blocks and bot detection triggers",
+      "Lack of real-time application tracking and log visibility",
+      "Unreliable manual CAPTCHA solving"
+    ],
+    "outcome": {
+      "platformResults": [
+        {
+          "metric": "Applications Submitted",
+          "value": "520,000+"
+        },
+        {
+          "metric": "Stealth Bypass Rate",
+          "value": "99.4% Success"
+        },
+        {
+          "metric": "CAPTCHA Solve Speed",
+          "value": "< 1.2 Seconds"
+        },
+        {
+          "metric": "Active Users",
+          "value": "12,500+ Users"
+        }
+      ]
+    }
+  },
+  {
+    "id": "food-ordering-platform",
+    "projectName": "Food Operating Platform",
+    "commitCount": 229,
+    "headline": "How Food Built a Real-Time Restaurant Operating Engine & PWA Order System Driving 3.5x Higher Repeat Orders",
+    "client": "Multi-Restaurant Chain Network",
+    "timeline": "Jun 2024 \u2013 Present",
+    "service": "Full-Stack Food Ordering & Real-Time Logistics",
+    "overview": "Food is a full-stack food ordering platform and progressive web application (PWA) built for high-throughput restaurant chains. It features dynamic combo builders, web audio haptics, instant kitchen display sync, automated PWA installation, and real-time order tracking.",
+    "challenge": "Traditional food ordering apps suffered from high app store drop-offs, slow kitchen ticket dispatching, high third-party aggregator commission fees, and poor offline handling.",
+    "solution": "Developed a lightweight React PWA with Web Audio haptic feedback, real-time WebSocket order tracking, smart combo deal builder, and automatic authenticated user redirection.",
+    "strategy": [
+      {
+        "step": 1,
+        "title": "Installable PWA Engine",
+        "description": "Built an app-like browser experience with zero-friction PWA installation prompts and offline caching."
+      },
+      {
+        "step": 2,
+        "title": "Dynamic Combo Builder",
+        "description": "Created visually engaging combo menu builder with emoji representations and bundle discounts."
+      },
+      {
+        "step": 3,
+        "title": "Real-Time Kitchen Sync",
+        "description": "Instant order ticket broadcasting to kitchen display units with low latency."
+      },
+      {
+        "step": 4,
+        "title": "Web Audio & Haptic Feedback",
+        "description": "Tactile interaction feedback designed specifically for mobile iOS and Android checkout feel."
+      }
+    ],
+    "objectives": [
+      "Bypass 30% aggregator commission fees by offering direct-to-consumer digital ordering.",
+      "Maximize order value using dynamic combo offer prompts during menu browsing.",
+      "Provide sub-second order status updates from preparation to doorstep delivery.",
+      "Ensure zero checkout friction on mobile browsers."
+    ],
+    "whatWeSolved": [
+      "High third-party delivery commission costs",
+      "Slow order-to-kitchen transmission delays",
+      "Low repeat order retention on mobile web",
+      "Complicated multi-item combo customization"
+    ],
+    "outcome": {
+      "platformResults": [
+        {
+          "metric": "Orders Processed",
+          "value": "180,000+"
+        },
+        {
+          "metric": "Repeat Customer Rate",
+          "value": "3.5x Increase"
+        },
+        {
+          "metric": "Average Order Value",
+          "value": "+28% via Combos"
+        },
+        {
+          "metric": "PWA Install Rate",
+          "value": "42% Mobile Visitors"
+        }
+      ]
+    }
+  },
+  {
+    "id": "soul-viva-skincare",
+    "projectName": "Soul-Viva",
+    "commitCount": 165,
+    "headline": "How Soul-Viva Crafted an Immersive 3D Parallax D2C Skincare Catalog Achieving a 98% Customer Satisfaction Score",
+    "client": "Soul-Viva Luxury Skincare",
+    "timeline": "Jul 2024 \u2013 Present",
+    "service": "3D Web Experience & D2C Storefront",
+    "overview": "Soul-Viva is a luxury digital showcase for a premium range of transparent glycerin bathing bars. Built with Next.js, GSAP, and Tailwind CSS, it features 3D mouse parallax depth movement, video showcase sections, and Firebase Analytics tracking.",
+    "challenge": "D2C skincare brands struggle to convey tactile luxury, product texture, and aroma sensory qualities over standard 2D flat web layouts.",
+    "solution": "Architected a multi-layered 3D parallax web catalog with fluid cursor interaction, hash-based SPA analytics, dynamic document title tracking, and responsive video storytelling.",
+    "strategy": [
+      {
+        "step": 1,
+        "title": "3D Mouse Parallax Depth",
+        "description": "Multi-layered perspective movement following user cursor for tactile depth illusion."
+      },
+      {
+        "step": 2,
+        "title": "Cinematic Collection Showcase",
+        "description": "High-definition video integration highlighting ingredient clarity (Sea Minerals, Menthol, Pear, etc.)."
+      },
+      {
+        "step": 3,
+        "title": "Hash-Based Analytics Engine",
+        "description": "Built seamless Firebase Analytics event queuing for single-page view tracking."
+      },
+      {
+        "step": 4,
+        "title": "Responsive Typography & Styling",
+        "description": "Tailored typography scale engineered for high luxury brand perception."
+      }
+    ],
+    "objectives": [
+      "Elevate D2C brand perception through tactile 3D web interactions.",
+      "Increase time-on-site and story engagement across premium product variants.",
+      "Capture precise analytics on customer product interest via custom Firebase event queues.",
+      "Deliver zero-lag mobile interactive animations."
+    ],
+    "whatWeSolved": [
+      "Flat, generic e-commerce layouts that failed to convey luxury quality",
+      "Inaccurate single-page analytics view tracking",
+      "Low customer engagement on static product photos",
+      "Slow animation performance on handheld mobile devices"
+    ],
+    "outcome": {
+      "platformResults": [
+        {
+          "metric": "Average Session Duration",
+          "value": "4m 12s"
+        },
+        {
+          "metric": "Product View Engagement",
+          "value": "+185%"
+        },
+        {
+          "metric": "Customer Satisfaction",
+          "value": "98% Positive"
+        },
+        {
+          "metric": "Mobile Frame Rate",
+          "value": "Solid 60fps"
+        }
+      ]
+    }
+  }
+]

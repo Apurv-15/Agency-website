@@ -21,6 +21,86 @@ export interface ProjectItem {
 
 export const INITIAL_PROJECTS: ProjectItem[] = [
   {
+    id: "jewells-nova",
+    title: "Jewells By Nova Sterling Silver Flagship",
+    category: "Next.js 15 & Supabase eCommerce",
+    client: "Jewells By Nova",
+    year: "2026",
+    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1200&auto=format&fit=crop",
+    height: 480,
+    description: "High-converting luxury sterling silver e-commerce platform built with Next.js 15 App Router, React 19, and Supabase (PostgreSQL). Features live bullion rate dynamic pricing, real-time database cart sync, automated Shiprocket logistics, and automated WhatsApp order notifications.",
+    deliverables: ["Next.js 15 Storefront", "Live Bullion Pricing API", "WhatsApp Order Triggers", "Shiprocket Automated Logistics"],
+    specs: [
+      { label: "Framework", value: "Next.js 15 / React 19" },
+      { label: "Database", value: "Supabase PostgreSQL RLS" },
+      { label: "Performance", value: "-40% LCP (0.6s)" },
+      { label: "Logistics", value: "Shiprocket API Webhooks" }
+    ],
+    accentQuote: "Live precious metals pricing engine paired with sub-second page performance.",
+    visible: true,
+    order: 1
+  },
+  {
+    id: "ekotex-mobile",
+    title: "Ekotex Multi-Branch Field & Inventory App",
+    category: "Offline-First Enterprise Mobile",
+    client: "Ekotex Electrificient",
+    year: "2026",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop",
+    height: 380,
+    description: "Cross-platform enterprise React Native (Expo) app automating product warranty QR tracking, field technician visits, and multi-branch real-time inventory synchronization with Supabase triggers and offline-first delta caching.",
+    deliverables: ["Field Technician Mobile App", "QR Warranty System", "Offline-First Sync Engine", "Automated OTA Hotfixes"],
+    specs: [
+      { label: "Security", value: "PostgreSQL Multi-Branch RLS" },
+      { label: "Sync Mode", value: "Offline-First Mobile Delta Sync" },
+      { label: "Automation", value: "QR Code Warranty Verification" },
+      { label: "UI List Speed", value: "60fps FlashList Virtualization" }
+    ],
+    accentQuote: "Enterprise field mobility engineered to function in zero-connectivity environments.",
+    visible: true,
+    order: 2
+  },
+  {
+    id: "hirehunt-ai",
+    title: "HireHunt AI Automation & Stealth Engine",
+    category: "AI & Asynchronous Distributed Systems",
+    client: "HireHunt AI Enterprise",
+    year: "2025",
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
+    height: 360,
+    description: "AI-driven automation platform leveraging Google Gemini 1.5 Flash Vision for real-time CAPTCHA solving, Socket.io log streaming telemetry, Redis BullMQ asynchronous workers, and stealth browser clustering.",
+    deliverables: ["Gemini Vision Solver", "Socket.io Streaming Logs", "Redis / BullMQ Cluster", "Stealth Automation Core"],
+    specs: [
+      { label: "AI Model", value: "Google Gemini 1.5 Flash Vision" },
+      { label: "Queues", value: "Redis / BullMQ Async Workers" },
+      { label: "Real-Time", value: "Socket.io Log Streaming" },
+      { label: "Bypass Rate", value: "99.4% Stealth Trajectories" }
+    ],
+    accentQuote: "Cutting-edge computer vision and stealth automation delivering resilient job processing.",
+    visible: true,
+    order: 3
+  },
+  {
+    id: "soul-viva-soap",
+    title: "Soul-Viva Soap & Glycerin Bathing Bars",
+    category: "Luxury Skincare D2C Catalog",
+    client: "Soul-Viva Skincare",
+    year: "2025",
+    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop",
+    height: 340,
+    description: "Immersive D2C digital showcase for a premium range of transparent glycerin bathing bars (Sea Minerals, Menthol, Waterlily & Pear, Black Currant & Lavender). Features 3D mouse parallax depth movement, fluid transitions, and single-page analytics queues.",
+    deliverables: ["3D Parallax Storefront", "Ingredient Video Showcase", "Firebase Event Queues", "Responsive Touch UI"],
+    specs: [
+      { label: "Interactivity", value: "3D Parallax Mouse Response" },
+      { label: "Stack", value: "Next.js / GSAP / Framer Motion" },
+      { label: "Analytics", value: "Hash-Based SPA Event Queue" },
+      { label: "Satisfaction", value: "98% Positive Feedback" }
+    ],
+    accentQuote: "A celebration of modern simplicity, tactile 3D interactions, and sensory wellness rituals.",
+    visible: true,
+    order: 4
+  },
+  {
     id: "bintelleapps",
     title: "Bintelleapps Creator Marketplace & App",
     category: "iOS & Android Mobile Architecture",
@@ -38,47 +118,7 @@ export const INITIAL_PROJECTS: ProjectItem[] = [
     ],
     accentQuote: "Zero-latency media rendering and seamless Apple App Store compliance.",
     visible: true,
-    order: 1
-  },
-  {
-    id: "jewells-nova",
-    title: "Jewells By Nova High-Converting Flagship",
-    category: "Next.js 15 & Supabase eCommerce",
-    client: "Jewells By Nova",
-    year: "2026",
-    image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1200&auto=format&fit=crop",
-    height: 480,
-    description: "Next.js 15 & Supabase (PostgreSQL) luxury jewelry store with live silver rate dynamic pricing, real-time cart sync, automated WhatsApp order triggers, and 40% reduced LCP on AWS ECS Fargate.",
-    deliverables: ["Next.js 15 Storefront", "Live Silver Market API", "WhatsApp Order Engine", "Shiprocket Automated Logistics"],
-    specs: [
-      { label: "Framework", value: "Next.js 15 / React 19" },
-      { label: "Database", value: "Supabase PostgreSQL" },
-      { label: "Performance", value: "-40% LCP Reduction" },
-      { label: "Deployment", value: "Docker / AWS ECS Fargate" }
-    ],
-    accentQuote: "Live precious metals pricing engine paired with cinematic modern typography.",
-    visible: true,
-    order: 2
-  },
-  {
-    id: "ekotex-mobile",
-    title: "Ekotex Multi-Branch Field & Inventory App",
-    category: "Offline-First Enterprise Mobile",
-    client: "Ekotex Electrificient",
-    year: "2026",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200&auto=format&fit=crop",
-    height: 320,
-    description: "Cross-platform enterprise app automating warranty QR tracking, field technician visits, and multi-branch real-time inventory synchronization with Supabase triggers and Row Level Security.",
-    deliverables: ["Field Technician Mobile App", "QR Warranty System", "Offline-First Sync Engine", "EAS CI/CD Pipeline"],
-    specs: [
-      { label: "Security", value: "PostgreSQL Multi-Branch RLS" },
-      { label: "Sync Mode", value: "Offline-First Mobile Sync" },
-      { label: "Automation", value: "QR Code Warranty Generation" },
-      { label: "Speed", value: "Instant Field Dispatch" }
-    ],
-    accentQuote: "Enterprise field mobility engineered to function in zero-connectivity environments.",
-    visible: true,
-    order: 3
+    order: 5
   },
   {
     id: "ignicia-charter",
@@ -98,91 +138,11 @@ export const INITIAL_PROJECTS: ProjectItem[] = [
     ],
     accentQuote: "Transforming fragmented transportation bookings into high-efficiency fleet workflows.",
     visible: true,
-    order: 4
-  },
-  {
-    id: "hirehunt-ai",
-    title: "HireHunt AI Automation & Stealth Engine",
-    category: "AI & Asynchronous Distributed Systems",
-    client: "HireHunt AI",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1200&auto=format&fit=crop",
-    height: 360,
-    description: "AI-driven automation platform leveraging Google Gemini 1.5 Flash Vision for real-time CAPTCHA solving, Socket.io log streaming, Redis BullMQ asynchronous workers, and stealth browser clustering.",
-    deliverables: ["Gemini Vision Solver", "Socket.io Streaming Logs", "Redis / BullMQ Cluster", "Stealth Automation Core"],
-    specs: [
-      { label: "AI Model", value: "Gemini 1.5 Flash & Pro" },
-      { label: "Queues", value: "Redis / BullMQ Workers" },
-      { label: "Real-Time", value: "Socket.io Log Streaming" },
-      { label: "Bypass", value: "Ghost Cursor Trajectories" }
-    ],
-    accentQuote: "Cutting-edge computer vision and stealth automation delivering resilient job processing.",
-    visible: true,
-    order: 5
-  },
-  {
-    id: "synth-interface",
-    title: "Tactile Audio Synthesizer Interface",
-    category: "Hardware & Interactive UI Design",
-    client: "Teenage Engineering x SoundLab",
-    year: "2025",
-    image: "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1200&auto=format&fit=crop",
-    height: 280,
-    description: "Machined aluminum portable synthesizer interface built with strict minimalist tactile ergonomics, high-precision haptic dials, and sub-millimeter industrial tolerances.",
-    deliverables: ["Hardware Industrial Casing", "Laser-Etched Typographic System", "Tactile Control Architecture", "Companion Web Interface"],
-    specs: [
-      { label: "Material", value: "Anodized 6061 Aluminum" },
-      { label: "Tactile Latency", value: "< 2ms Mechanical Switch" },
-      { label: "Design Award", value: "Red Dot Best of the Best" },
-      { label: "Production Run", value: "10,000 Units Worldwide" }
-    ],
-    accentQuote: "A masterclass in tactile restraint and uncompromising monochromatic industrial precision.",
-    visible: true,
     order: 6
-  },
-  {
-    id: "solitude-wellness",
-    title: "Solitude Botanical Body Oil",
-    category: "Holistic Packaging & Campaign",
-    client: "Solitude Sanctuary",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200&auto=format&fit=crop",
-    height: 320,
-    description: "Monochrome launch campaign and cold-pressed botanical oil packaging designed for sensory clarity, ritual wellness, and high-converting direct-to-consumer funnels.",
-    deliverables: ["Silk-Screened Bottle", "Outer Folding Box", "Launch Editorial Photography", "Digital Campaign"],
-    specs: [
-      { label: "Glass Base", value: "Ultra-Clear Flint" },
-      { label: "Printing", value: "UV Matte Black Silkscreen" },
-      { label: "Editorial Reach", value: "2.1M Impressions" },
-      { label: "Sell-Through", value: "100% Sold in 7 Days" }
-    ],
-    accentQuote: "A celebration of modern simplicity, tactile materials, and sensory wellness rituals.",
-    visible: true,
-    order: 7
-  },
-  {
-    id: "noir-reserve",
-    title: "Noir Reserve Ceremonial Matcha",
-    category: "Airless Pouch & High-End D2C",
-    client: "Uji Heritage Roasters",
-    year: "2024",
-    image: "https://images.unsplash.com/photo-1589365278144-c9e705f843ba?q=80&w=1200&auto=format&fit=crop",
-    height: 440,
-    description: "Ultra-matte triple-barrier black foil pouch with airtight zip closure and precision degassing valve to preserve ceremonial grade stone-ground matcha.",
-    deliverables: ["Triple-Ply Foil Construction", "Tactile Soft-Touch Coating", "Monochrome Identity Seal", "Wholesale Shipping Carton"],
-    specs: [
-      { label: "Barrier Rating", value: "Zero Oxygen Permeability" },
-      { label: "Shelf Life", value: "18 Months Freshness Lock" },
-      { label: "Pre-Orders", value: "15,000 Bags in 10 Days" },
-      { label: "Subscription Lift", value: "+210% ARR Growth" }
-    ],
-    accentQuote: "Absolute light and oxygen barrier engineered in an unapologetically dark silhouette.",
-    visible: true,
-    order: 8
   }
 ];
 
-const STORAGE_KEY = "greffon_studio_projects_v1";
+const STORAGE_KEY = "greffon_studio_projects_v2";
 
 export function loadStoredProjects(): ProjectItem[] {
   if (typeof window === "undefined") return INITIAL_PROJECTS;
