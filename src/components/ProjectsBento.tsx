@@ -8,13 +8,13 @@ const premiumEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const cardToCatalogMap: Record<number, typeof topProjectsCatalog[0] & { heroImage: string }> = {
   1: {
     ...topProjectsCatalog[0], // Jwells
-    heroImage: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=1400&auto=format&fit=crop"
+    heroImage: "/jwells_real_apple.jpg"
   },
   2: {
     ...topProjectsCatalog[3], // HireHunt / InternAuto
     projectName: "HireHunt AI",
     headline: "How HireHunt AI Built a Stealth Job Application Automation Platform Processing 500K+ Applications with Gemini AI",
-    heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1400&auto=format&fit=crop"
+    heroImage: "/hirehunt_ai_apple.jpg"
   },
   3: {
     ...topProjectsCatalog[1], // Exotex App
@@ -26,11 +26,11 @@ const cardToCatalogMap: Record<number, typeof topProjectsCatalog[0] & { heroImag
   },
   5: {
     ...topProjectsCatalog[3], // InternAuto Pro
-    heroImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1400&auto=format&fit=crop"
+    heroImage: "/hirehunt_ai_apple.jpg"
   },
   6: {
     ...topProjectsCatalog[5], // Soul-Viva Soap
-    heroImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1400&auto=format&fit=crop"
+    heroImage: "/soulviva_real_apple.jpg"
   }
 };
 
