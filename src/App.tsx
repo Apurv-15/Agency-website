@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import Lenis from "lenis";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import StickyHeader from "./components/StickyHeader";
 import AgencyServicesPage from "./components/AgencyServicesPage";
 import AiInfrastructureLanding from "./components/AiInfrastructureLanding";
 import CloudVideoScrubSection from "./components/CloudVideoScrubSection";
@@ -79,6 +80,8 @@ export default function App() {
       className="min-h-screen text-text-primary selection:bg-neutral-800 selection:text-white font-geist transition-colors duration-700 ease-in-out bg-[#FAF9F6]"
       style={{ transition: "background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1)" }}
     >
+      {/* Global Sticky Navigation Header */}
+      <StickyHeader />
       {/* Section 1: Temporarily hidden - Black Agency Office → iMac Zoom Landing Hero */}
       {/* 
       <section data-bg="#050505" className="w-full">
@@ -114,12 +117,9 @@ export default function App() {
       </section>
 
       {/* Section 6: Perspective 3D Text Reveal ("Building products that customers love...") */}
-      <section data-bg="#000000" className="w-full min-h-screen flex items-center justify-center">
+      <section data-bg="#000000" className="w-full">
         <PerspectiveTextReveal
           text="Building products that customers love isn’t magic, it requires:"
-          perspective={1100}
-          initialRotateX={28}
-          scrubSpeed={1}
         />
       </section>
 
