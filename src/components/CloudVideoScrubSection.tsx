@@ -160,42 +160,8 @@ export default function CloudVideoScrubSection() {
               willChange: 'transform, opacity',
             }}
           >
-            {/* Top Navbar */}
-            <div className="w-full max-w-[1440px] mx-auto h-[60px] flex items-center justify-between relative z-20">
-              <StaggerItem visible={s1Visible} delay={0}>
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-geist font-semibold text-xs tracking-tight shadow-xs">
-                    G
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <span className="text-xs sm:text-[13px] font-geist font-semibold tracking-wider text-black">
-                      GREFFON
-                    </span>
-                  </div>
-                </div>
-              </StaggerItem>
-
-              {/* Center Navigation Links */}
-              <StaggerItem visible={s1Visible} delay={30} className="hidden md:block">
-                <nav className="flex items-center gap-8 text-[13px] font-geist font-medium text-[#4A4A4A] pointer-events-auto">
-                  <a href="#services" className="hover:text-black transition-colors">Services</a>
-                  <a href="#projects" className="hover:text-black transition-colors">Work</a>
-                  <a href="#about" className="hover:text-black transition-colors">About</a>
-                  <a href="#contact" className="hover:text-black transition-colors">Contact</a>
-                </nav>
-              </StaggerItem>
-
-              {/* Nav CTA Button */}
-              <StaggerItem visible={s1Visible} delay={60}>
-                <a
-                  href="#contact"
-                  className="pointer-events-auto inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-black text-white text-xs font-geist font-medium hover:bg-neutral-800 transition-all shadow-xs cursor-pointer group"
-                >
-                  <span>Start a Project</span>
-                  <ArrowUpRight size={13} className="text-neutral-400 group-hover:text-white transition-colors" />
-                </a>
-              </StaggerItem>
-            </div>
+            {/* Top Spacer to account for sticky header */}
+            <div className="w-full max-w-[1440px] mx-auto h-[60px]" />
 
             {/* Main Left-Aligned Hero Content */}
             <div className="w-full max-w-[1440px] mx-auto my-auto relative z-10 flex items-center justify-between pt-2 pb-4">
